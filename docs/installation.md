@@ -22,10 +22,10 @@ If you're experienced with Docker, skip to [Step 2](#step-2-create-the-docker-co
 ### Step 1: Create the Directory Structure
 
 ```bash
-mkdir -p ~/booklore/mariadb/config
-mkdir -p ~/booklore/data
-mkdir -p ~/booklore/books
-mkdir -p ~/booklore/bookdrop
+mkdir -p ~/grimmory/mariadb/config
+mkdir -p ~/grimmory/data
+mkdir -p ~/grimmory/books
+mkdir -p ~/grimmory/bookdrop
 ```
 
 | Directory | Purpose |
@@ -42,7 +42,7 @@ mkdir -p ~/booklore/bookdrop
 Navigate to your Grimmory directory:
 
 ```bash
-cd ~/booklore
+cd ~/grimmory
 ```
 
 Create a `.env` file:
@@ -55,15 +55,15 @@ TZ=Etc/UTC
 BOOKLORE_PORT=6060
 
 # Database Connection (Grimmory)
-DATABASE_URL=jdbc:mariadb://mariadb:3306/booklore
-DB_USER=booklore
+DATABASE_URL=jdbc:mariadb://mariadb:3306/grimmory
+DB_USER=grimmory
 DB_PASSWORD=ChangeMe_GrimmoryApp_2025!
 
 # MariaDB Container Settings
 DB_USER_ID=1000
 DB_GROUP_ID=1000
 MYSQL_ROOT_PASSWORD=ChangeMe_MariaDBRoot_2025!
-MYSQL_DATABASE=booklore
+MYSQL_DATABASE=grimmory
 ```
 
 :::warning[Security]
@@ -74,9 +74,9 @@ Create `docker-compose.yml`:
 
 ````yaml
 services:
-  booklore:
+  grimmory:
     image: grimmory/grimmory:latest
-    container_name: booklore
+    container_name: grimmory
     environment:
       - USER_ID=${APP_USER_ID}
       - GROUP_ID=${APP_GROUP_ID}
@@ -125,7 +125,7 @@ services:
 - **Image registry:** Alternatively use `ghcr.io/booklore-app/booklore:latest` from GitHub Container Registry.
 
 :::tip[Version Pinning]
-For production, pin to specific versions (e.g., `booklore/booklore:v1.2.3`). Check [releases](https://github.com/booklore-app/booklore/releases).
+For production, pin to specific versions (e.g., `grimmory/grimmory:v1.2.3`). Check [releases](https://github.com/booklore-app/booklore/releases).
 :::
 
 ---
