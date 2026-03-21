@@ -31,7 +31,7 @@ volumes:
 ```
 
 :::warning[Permissions]
-Ensure the Bookdrop folder has proper read/write permissions for the BookLore container.
+Ensure the Bookdrop folder has proper read/write permissions for the Grimmory container.
 :::
 
 Drop supported files (PDF, EPUB, CBZ, CBR, CB7) into this folder. You can drop entire folders of books at once.

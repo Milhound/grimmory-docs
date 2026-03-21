@@ -1,6 +1,6 @@
 # 🔤 Custom Fonts for EPUB Reader
 
-Upload custom fonts to personalize your reading experience in BookLore's EPUB reader. Fonts from [Google Fonts](https://fonts.google.com/) or [Font Squirrel](https://www.fontsquirrel.com/) work well.
+Upload custom fonts to personalize your reading experience in Grimmory's EPUB reader. Fonts from [Google Fonts](https://fonts.google.com/) or [Font Squirrel](https://www.fontsquirrel.com/) work well.
 
 ---
 

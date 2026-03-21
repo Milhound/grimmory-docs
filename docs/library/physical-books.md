@@ -91,7 +91,7 @@ Use a mobile barcode scanner app (like Alfa ISBN Scanner) to scan your physical 
 
 ### Step 3: Import
 
-Click **Start Import** to begin. BookLore processes each ISBN sequentially, looking up metadata from your configured providers and creating the book entry. A progress bar and real-time status updates show which book is being processed.
+Click **Start Import** to begin. Grimmory processes each ISBN sequentially, looking up metadata from your configured providers and creating the book entry. A progress bar and real-time status updates show which book is being processed.
 
 ![Import in progress with real-time metadata lookup](/img/physical-books/isbn-import-progress.jpg)
 

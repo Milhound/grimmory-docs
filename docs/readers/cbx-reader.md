@@ -1,6 +1,6 @@
 # 🦸 Comic Reader
 
-BookLore's comic reader handles CBZ, CBR, and CB7 files with page-by-page navigation, two-page spreads, slideshow mode, bookmarks, notes, and customizable display settings.
+Grimmory's comic reader handles CBZ, CBR, and CB7 files with page-by-page navigation, two-page spreads, slideshow mode, bookmarks, notes, and customizable display settings.
 
 ---
 

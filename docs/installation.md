@@ -1,6 +1,6 @@
 # 🛠️ Installation Guide
 
-Get BookLore up and running in minutes with Docker Compose.
+Get Grimmory up and running in minutes with Docker Compose.
 
 :::tip[Quick Start]
 If you're experienced with Docker, skip to [Step 2](#step-2-create-the-docker-composeyml-file) to grab the configuration.
@@ -39,7 +39,7 @@ mkdir -p ~/booklore/bookdrop
 
 ### Step 2: Create the `docker-compose.yml` File
 
-Navigate to your BookLore directory:
+Navigate to your Grimmory directory:
 
 ```bash
 cd ~/booklore
@@ -48,16 +48,16 @@ cd ~/booklore
 Create a `.env` file:
 
 ```ini
-# BookLore Application Settings
+# Grimmory Application Settings
 APP_USER_ID=1000
 APP_GROUP_ID=1000
 TZ=Etc/UTC
 BOOKLORE_PORT=6060
 
-# Database Connection (BookLore)
+# Database Connection (Grimmory)
 DATABASE_URL=jdbc:mariadb://mariadb:3306/booklore
 DB_USER=booklore
-DB_PASSWORD=ChangeMe_BookLoreApp_2025!
+DB_PASSWORD=ChangeMe_GrimmoryApp_2025!
 
 # MariaDB Container Settings
 DB_USER_ID=1000
@@ -136,11 +136,11 @@ For production, pin to specific versions (e.g., `booklore/booklore:v1.2.3`). Che
 docker compose up -d
 ```
 
-Monitor startup with `docker compose logs -f`. Wait for MariaDB to show "(healthy)" before accessing BookLore.
+Monitor startup with `docker compose logs -f`. Wait for MariaDB to show "(healthy)" before accessing Grimmory.
 
 ---
 
-### Step 4: Access BookLore
+### Step 4: Access Grimmory
 
 Open your browser and navigate to:
 

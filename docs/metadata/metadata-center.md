@@ -24,7 +24,7 @@ The default view displaying the book's core metadata at a glance.
 **Metadata fields:**
 - Genres and tags (clickable to filter your library)
 - Library, publisher, published date, language
-- BookLore Progress (metadata completeness score), metadata match score
+- Grimmory Progress (metadata completeness score), metadata match score
 - Page count, age rating, content rating, file size
 - ISBN and file path
 
@@ -217,7 +217,7 @@ A sidecar is a `metadata.json` file written to the same directory as the book fi
 The viewer displays the full JSON content, along with the generation timestamp, version, and generator info.
 
 :::info[When to Use Sidecars]
-Sidecars are useful for preserving metadata when migrating books between BookLore instances, sharing curated metadata with others, or as a backup before bulk operations.
+Sidecars are useful for preserving metadata when migrating books between Grimmory instances, sharing curated metadata with others, or as a backup before bulk operations.
 :::
 
 ---

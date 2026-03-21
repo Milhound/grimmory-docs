@@ -1,6 +1,6 @@
 # 📂 Sidecar Files
 
-Sidecar files are standalone JSON metadata files stored alongside your book files on disk. They provide a portable, human-readable backup of book metadata that can be imported into BookLore or used with other tools.
+Sidecar files are standalone JSON metadata files stored alongside your book files on disk. They provide a portable, human-readable backup of book metadata that can be imported into Grimmory or used with other tools.
 
 ---
 
@@ -67,7 +67,7 @@ In the **Metadata Center**, the Sidecar tab shows:
 - A **sync status badge** indicating whether the sidecar is in sync, outdated, conflicting, missing, or not applicable
 - The current sidecar JSON content
 - **Export** button to write the sidecar file to disk
-- **Import** button to update BookLore metadata from an existing sidecar file
+- **Import** button to update Grimmory metadata from an existing sidecar file
 
 ---
 
@@ -76,4 +76,4 @@ In the **Metadata Center**, the Sidecar tab shows:
 In **Settings > Library Metadata Settings**, each library has bulk sidecar options:
 
 - **Export All** generates sidecar files for every book in the library
-- **Import All** reads sidecar files from disk and updates BookLore metadata for all books that have them
+- **Import All** reads sidecar files from disk and updates Grimmory metadata for all books that have them

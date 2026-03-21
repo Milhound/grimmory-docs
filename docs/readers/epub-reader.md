@@ -1,6 +1,6 @@
 # 📖 EPUB Reader
 
-BookLore includes a full-featured EPUB reader with customizable themes, annotations, bookmarks, notes, search, and reading progress tracking. Open any EPUB file from your library to start reading.
+Grimmory includes a full-featured EPUB reader with customizable themes, annotations, bookmarks, notes, search, and reading progress tracking. Open any EPUB file from your library to start reading.
 
 ---
 

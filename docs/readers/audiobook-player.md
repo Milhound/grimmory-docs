@@ -1,6 +1,6 @@
 # 🎧 Audiobook Player
 
-BookLore includes a dedicated audiobook player for M4B, M4A, and MP3 files. It supports chapter navigation, playback speed control, sleep timers, bookmarks, and automatic progress tracking.
+Grimmory includes a dedicated audiobook player for M4B, M4A, and MP3 files. It supports chapter navigation, playback speed control, sleep timers, bookmarks, and automatic progress tracking.
 
 ---
 
