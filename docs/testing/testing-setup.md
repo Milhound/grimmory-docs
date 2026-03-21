@@ -15,7 +15,7 @@ Before you start, you need to have [Docker](https://docs.docker.com/get-docker/)
 
 ### **Step 1. Create a Sandbox Folder**
 
-To prevent any risk to your actual data, create a brand new folder on your computer (e.g., `booklore-test`). Do all your work inside this folder.
+To prevent any risk to your actual data, create a brand new folder on your computer (e.g., `grimmory-test`). Do all your work inside this folder.
 
 ### **Step 2. Prepare Configuration Files**
 
@@ -31,12 +31,11 @@ Open the `docker-compose.yml` file in your sandbox folder using a text editor (N
 
 #### **A. Point to the Latest Pre-release Image:**
 
-Find the line starting with `image:` and update it with the latest `develop-` tag provided by the team at https://github.com/booklore-app/booklore/pkgs/container/booklore/
+Find the line starting with `image:` and update it with the latest `develop-` tag provided by the team at https://github.com/grimmory-tools/grimmory/pkgs/container/grimmory/
 
 ```yaml
 booklore:
   image: booklore/booklore:develop-2f6e8570
-  # Alternative: ghcr.io/booklore-app/booklore:develop-2f6e8570
 ```
 
 #### **B. Avoid Container Conflicts:**
