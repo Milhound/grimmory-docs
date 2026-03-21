@@ -125,7 +125,6 @@ const sidebars: SidebarsConfig = {
         {type: 'doc', id: 'email-setup', label: '✉️ Email Setup'},
         {type: 'doc', id: 'tools/task-manager', label: '🖥️ System Task Manager'},
         {type: 'doc', id: 'tools/audit-logs', label: '🛡️ Audit Logs'},
-        {type: 'doc', id: 'tools/telemetry', label: '📊 Telemetry'},
         {type: 'doc', id: 'tools/global-preferences', label: '⚙️ Global Preferences'},
         {type: 'doc', id: 'tools/devices', label: '📱 Devices'},
       ],
