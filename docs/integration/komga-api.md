@@ -118,7 +118,7 @@ Now that your Komga API is configured, you can connect various reading apps to a
 2. Look for **Add Source**, **Add Server**, or **Browse Sources** settings
 3. Find and select the **Komga** source/extension
 4. Configure the Komga source:
-   - **Server URL:** `http://your-booklore-domain/komga`
+   - **Server URL:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Save and browse your library
@@ -146,7 +146,7 @@ Koma is a fork of Mihon. It is centered around comics and comes with a specializ
 2. Tap the **Grimmory** source
 3. Tap the settings icon (gear icon) in the top right
 4. Enter your connection details:
-   - **Address:** `http://your-booklore-domain/komga`
+   - **Address:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Tap **OK** or **Save**
@@ -186,7 +186,7 @@ Mihon is one of the most popular manga reading apps for Android with excellent K
 2. Tap the **Komga** source
 3. Tap the settings icon (gear icon) in the top right
 4. Enter your connection details:
-   - **Address:** `http://your-booklore-domain/komga`
+   - **Address:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Tap **OK** or **Save**
@@ -214,7 +214,7 @@ Komelia is the official Komga client with cross-platform support.
 1. Open Komelia
 2. Click **Add Server** or the **+** button
 3. Enter your server details:
-   - **Server URL:** `http://your-booklore-domain/komga`
+   - **Server URL:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 4. Click **Connect** or **Add**

@@ -79,7 +79,7 @@ api_endpoint=http://192.168.1.100:6060/api/kobo/your-token-here
 
 **Remote server (with reverse proxy and HTTPS):**
 ```text
-api_endpoint=https://booklore.example.com/api/kobo/your-token-here
+api_endpoint=https://your-grimmory-domain.com/api/kobo/your-token-here
 ```
 
 ![The modified Kobo eReader.conf with api_endpoint pointing to the Grimmory instance](/img/kobo/config-after.jpg)
