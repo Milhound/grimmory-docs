@@ -350,7 +350,7 @@ A home server with a few family members. You just want everyone to sign in with 
 ```yaml
 services:
   booklore:
-    image: booklore/booklore:latest
+    image: grimmory/grimmory:latest
     ports:
       - "8080:8080"
     volumes:
@@ -427,7 +427,7 @@ A shared server where you want tight control over who gets access. All authentic
 ```yaml
 services:
   booklore:
-    image: booklore/booklore:latest
+    image: grimmory/grimmory:latest
     ports:
       - "8080:8080"
     volumes:

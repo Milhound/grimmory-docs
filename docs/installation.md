@@ -75,7 +75,7 @@ Create `docker-compose.yml`:
 ````yaml
 services:
   booklore:
-    image: booklore/booklore:latest
+    image: grimmory/grimmory:latest
     container_name: booklore
     environment:
       - USER_ID=${APP_USER_ID}

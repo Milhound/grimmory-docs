@@ -18,8 +18,8 @@ Grimmory is a self-hosted library management system for ebooks, comics, and audi
 Create the directory structure and start the containers:
 
 ```bash
-mkdir -p ~/booklore/{config/mariadb,data,books,bookdrop}
-cd ~/booklore
+mkdir -p ~/grimmory/{config/mariadb,data,books,bookdrop}
+cd ~/grimmory
 ```
 
 Create a `docker-compose.yml` with the Grimmory and MariaDB services. The key volumes to mount are:
@@ -83,7 +83,7 @@ After saving, the library scans your folders automatically. See [Setup First Lib
 **Direct copy:** Place files in your library folder, then rescan from the UI (or let Watch Folders pick them up automatically).
 
 ```bash
-cp /path/to/your/books/* ~/booklore/books/
+cp /path/to/your/books/* ~/grimmory/books/
 ```
 
 **Bookdrop:** Drop files into the bookdrop folder. Grimmory auto-detects them, fetches metadata, and stages them for review. You can edit metadata, assign a destination library, and finalize the import from the UI. See [Bookdrop](bookdrop.md).
@@ -148,5 +148,5 @@ Any device or app that supports OPDS. Kobo devices have a dedicated integration 
 
 ## 🔗 Get Help
 
-- [GitHub Issues](https://github.com/booklore-app/booklore) for bug reports
-- [Community Discord](https://discord.gg/Ee5hd458Uz) for questions and support
+- [GitHub Issues](https://github.com/grimmory-tools/grimmory) for bug reports
+- [Community Discord](https://discord.gg/9YJ7HB4n8T) for questions and support
