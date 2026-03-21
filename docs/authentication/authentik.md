@@ -120,7 +120,7 @@ Keep these handy for the next step.
 
 Navigate to **Settings > OIDC** in Booklore.
 
-![Booklore OIDC Settings](/img/authentication/authentik/booklore-oidc-settings.jpg)
+![Booklore OIDC Settings](/img/authentication/authentik/grimmory-oidc-settings.jpg)
 
 Fill in the provider configuration:
 
@@ -167,7 +167,7 @@ The fastest way to test without logging out of your admin account:
 
 3. Click the **Booklore** tile. You should be redirected and logged in automatically.
 
-![Booklore Homepage](/img/authentication/authentik/booklore-homepage.jpg)
+![Booklore Homepage](/img/authentication/authentik/grimmory-homepage.jpg)
 
 4. Verify the username and email are correct, and that you can access your libraries.
 

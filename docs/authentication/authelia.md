@@ -54,7 +54,7 @@ Restart Authelia after saving the config.
 
 Navigate to **Settings > OIDC** in Booklore.
 
-![Booklore OIDC Settings](/img/authentication/authelia/booklore-oidc-settings.jpg)
+![Booklore OIDC Settings](/img/authentication/authelia/grimmory-oidc-settings.jpg)
 
 Fill in the provider configuration:
 
