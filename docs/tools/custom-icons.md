@@ -1,6 +1,6 @@
 # Custom SVG Icons
 
-Booklore lets you upload custom SVG icons to use with libraries, shelves, and magic shelves. The icon picker gives you access to a built-in PrimeNG icon set, your uploaded SVG collection, and a form to add new icons by pasting SVG code. Icons from [Lucide](https://lucide.dev/), [Iconoir](https://iconoir.com/), [Heroicons](https://heroicons.com/), or [Feather Icons](https://feathericons.com/) work well.
+Grimmory lets you upload custom SVG icons to use with libraries, shelves, and magic shelves. The icon picker gives you access to a built-in PrimeNG icon set, your uploaded SVG collection, and a form to add new icons by pasting SVG code. Icons from [Lucide](https://lucide.dev/), [Iconoir](https://iconoir.com/), [Heroicons](https://heroicons.com/), or [Feather Icons](https://feathericons.com/) work well.
 
 ---
 
@@ -59,13 +59,13 @@ Switch to the **Add SVG Icon** tab to upload a new icon by pasting its SVG code.
    </svg>
    ```
 
-3. **Check the preview**. It updates automatically as you paste, showing exactly how the icon will look in Booklore.
+3. **Check the preview**. It updates automatically as you paste, showing exactly how the icon will look in Grimmory.
 
 4. **Click Save SVG**. The icon is saved, and you're automatically switched to the SVG Icons tab with your new icon pre-selected.
 
 :::info[SVG Tips]
 - Include a `viewBox` attribute (e.g., `viewBox="0 0 24 24"`) for proper scaling. Remove hardcoded `width`/`height` if the icon doesn't scale correctly.
-- Use `fill="none"` and `stroke="white"` for the best visual consistency with Booklore's dark theme. Hardcoded colors may not look right.
+- Use `fill="none"` and `stroke="white"` for the best visual consistency with Grimmory's dark theme. Hardcoded colors may not look right.
 - Maximum file size is 1MB.
 - Icons are saved to `~/booklore/data/icons/svg/` on disk.
 :::

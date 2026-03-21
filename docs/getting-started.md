@@ -1,6 +1,6 @@
 # 🚀 Getting Started
 
-Booklore is a self-hosted library management system for ebooks, comics, and audiobooks. Your books and data stay on your server, with no subscription fees or cloud dependency.
+Grimmory is a self-hosted library management system for ebooks, comics, and audiobooks. Your books and data stay on your server, with no subscription fees or cloud dependency.
 
 ---
 
@@ -22,7 +22,7 @@ mkdir -p ~/booklore/{config/mariadb,data,books,bookdrop}
 cd ~/booklore
 ```
 
-Create a `docker-compose.yml` with the Booklore and MariaDB services. The key volumes to mount are:
+Create a `docker-compose.yml` with the Grimmory and MariaDB services. The key volumes to mount are:
 
 | Volume | Purpose |
 |--------|---------|
@@ -41,7 +41,7 @@ See the [Installation Guide](installation.md) for the complete `docker-compose.y
 
 ## 👤 Step 2: Create Admin Account
 
-Open `http://localhost:6060` in your browser. On first launch, Booklore shows a setup wizard to create the admin account:
+Open `http://localhost:6060` in your browser. On first launch, Grimmory shows a setup wizard to create the admin account:
 
 | Field | Required | Notes |
 |-------|----------|-------|
@@ -72,7 +72,7 @@ Click **"Add a Library"** from the dashboard to open the library creation dialog
 | Format Priority | Drag to reorder which format is treated as primary when a book exists in multiple formats |
 | Allowed Formats | Restrict which file formats this library will scan |
 
-Booklore supports EPUB, PDF, MOBI, AZW3, FB2, CBZ/CBR/CB7, M4B, M4A, and MP3.
+Grimmory supports EPUB, PDF, MOBI, AZW3, FB2, CBZ/CBR/CB7, M4B, M4A, and MP3.
 
 After saving, the library scans your folders automatically. See [Setup First Library](library/setup-first-library.md) for a full walkthrough, and [Folder Structure](library/folder-structure.md) for how to organize your files.
 
@@ -86,19 +86,19 @@ After saving, the library scans your folders automatically. See [Setup First Lib
 cp /path/to/your/books/* ~/booklore/books/
 ```
 
-**Bookdrop:** Drop files into the bookdrop folder. Booklore auto-detects them, fetches metadata, and stages them for review. You can edit metadata, assign a destination library, and finalize the import from the UI. See [Bookdrop](bookdrop.md).
+**Bookdrop:** Drop files into the bookdrop folder. Grimmory auto-detects them, fetches metadata, and stages them for review. You can edit metadata, assign a destination library, and finalize the import from the UI. See [Bookdrop](bookdrop.md).
 
 **Web upload:** Use the upload button in the toolbar. You can upload directly to a library or to BookDrop for staging. The default file size limit is 100 MB per file (configurable by admins).
 
 :::warning[Cloudflare Tunnels]
-If you serve Booklore through a Cloudflare Tunnel, the free tier has a [100 MB upload limit](https://developers.cloudflare.com/workers/platform/limits/#request-limits).
+If you serve Grimmory through a Cloudflare Tunnel, the free tier has a [100 MB upload limit](https://developers.cloudflare.com/workers/platform/limits/#request-limits).
 :::
 
 ---
 
 ## 📱 Step 5: Start Reading
 
-Click any book cover, then click **"Read"** to open the built-in reader. Booklore has dedicated readers for each format:
+Click any book cover, then click **"Read"** to open the built-in reader. Grimmory has dedicated readers for each format:
 
 | Reader | Formats | Highlights |
 |--------|---------|------------|
@@ -116,7 +116,7 @@ Connect external reading apps via OPDS:
 3. Copy the catalog URL shown in the API Endpoints section
 4. Add it to your reading app (KOReader, Moon+ Reader, etc.)
 
-Booklore also provides a Komga-compatible API for apps like Tachiyomi and Komelia. OPDS uses its own user accounts, created by admins in the OPDS settings page.
+Grimmory also provides a Komga-compatible API for apps like Tachiyomi and Komelia. OPDS uses its own user accounts, created by admins in the OPDS settings page.
 
 See [Kobo Integration](integration/kobo.md) and [OPDS](integration/opds.md) for detailed setup guides.
 
@@ -135,13 +135,13 @@ See [Kobo Integration](integration/kobo.md) and [OPDS](integration/opds.md) for 
 
 ## ❓ Common Questions
 
-**Can I access Booklore remotely?**
+**Can I access Grimmory remotely?**
 Yes, set up a reverse proxy with HTTPS. See the [Installation Guide](installation.md).
 
 **How do I backup my library?**
 Backup your `data` directory (application state) and your books directory regularly.
 
-**What e-readers work with Booklore?**
+**What e-readers work with Grimmory?**
 Any device or app that supports OPDS. Kobo devices have a dedicated integration with deeper sync support.
 
 ---

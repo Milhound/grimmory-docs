@@ -64,7 +64,7 @@ Metadata fetching for large libraries can take a while since it queries external
 
 ### 🗑️ Delete Library
 
-Permanently removes the library from Booklore. This deletes:
+Permanently removes the library from Grimmory. This deletes:
 
 - Library configuration and metadata from the database
 - Generated thumbnails and cache

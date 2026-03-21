@@ -1,6 +1,6 @@
 # 📚 Series
 
-The Series view lets you browse your collection organized by book series. Booklore automatically groups books that share a series name into a single series entry, giving you a high-level overview of multi-book collections like trilogies, manga runs, or long-running novel series.
+The Series view lets you browse your collection organized by book series. Grimmory automatically groups books that share a series name into a single series entry, giving you a high-level overview of multi-book collections like trilogies, manga runs, or long-running novel series.
 
 ---
 
@@ -84,7 +84,7 @@ Below the header, all books in the series are displayed in a grid, sorted by the
 
 ## 🧩 How Series Are Created
 
-Series are built automatically from book metadata. When a book's metadata includes a **series name**, Booklore groups it with other books sharing that same series name.
+Series are built automatically from book metadata. When a book's metadata includes a **series name**, Grimmory groups it with other books sharing that same series name.
 
 **Series metadata comes from:**
 - Embedded metadata inside book files (EPUB, PDF, etc.)
@@ -92,7 +92,7 @@ Series are built automatically from book metadata. When a book's metadata includ
 - Manual editing through the metadata editor
 - Sidecar files (OPF files alongside books)
 
-You don't need to manually create or manage series. Just make sure your books have a series name in their metadata, and Booklore handles the rest.
+You don't need to manually create or manage series. Just make sure your books have a series name in their metadata, and Grimmory handles the rest.
 
 :::info[Series Number]
 Each book can also have a **series number** that determines its position within the series. This controls the sort order on the detail page and which book is picked by **Read Next**. Series numbers support decimals (e.g., 1.5) for interstitial entries like novellas or side stories.

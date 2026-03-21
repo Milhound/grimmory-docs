@@ -18,7 +18,7 @@ Open **Settings > Metadata 2**, find **Lubimyczytac** in the provider list, flip
 
 Once enabled, LubimyCzytac appears as a priority option in the Advanced Metadata Fetch dialog. You can set it as Priority 1, 2, 3, or 4 for any individual field.
 
-**For Polish books or Polish translations**, set LubimyCzytac as Priority 1 for most fields and use Google Books or Goodreads as fallbacks. **For English books**, keep it as Priority 3 or 4 behind providers like Amazon or Google. If LubimyCzytac doesn't have data for a particular field, Booklore automatically tries the next provider in your priority list.
+**For Polish books or Polish translations**, set LubimyCzytac as Priority 1 for most fields and use Google Books or Goodreads as fallbacks. **For English books**, keep it as Priority 3 or 4 behind providers like Amazon or Google. If LubimyCzytac doesn't have data for a particular field, Grimmory automatically tries the next provider in your priority list.
 
 ---
 
@@ -36,14 +36,14 @@ It also returns two provider-specific fields:
 Both fields can be locked in the metadata picker to prevent overwriting during future refreshes.
 
 :::note[Rating Scale]
-LubimyCzytac uses a 10-point scale. Booklore automatically converts it to 5 points for consistency with other providers (e.g., an 8.0 becomes 4.0).
+LubimyCzytac uses a 10-point scale. Grimmory automatically converts it to 5 points for consistency with other providers (e.g., an 8.0 becomes 4.0).
 :::
 
 ---
 
 ## 🌐 Language Handling
 
-LubimyCzytac returns language names in Polish. Booklore maps them to ISO 639-1 codes automatically:
+LubimyCzytac returns language names in Polish. Grimmory maps them to ISO 639-1 codes automatically:
 
 | Polish Name | Code | Language |
 |-------------|------|----------|
@@ -63,8 +63,8 @@ LubimyCzytac returns language names in Polish. Booklore maps them to ISO 639-1 c
 | No results returned | Make sure the provider is enabled in Settings > Metadata 2. Verify the book exists on lubimyczytac.pl by searching manually. |
 | Wrong book matched | Use **title + author name** for the most accurate results. For Polish books, searching with the Polish title gives the highest accuracy. |
 | Missing fields | Not every book has complete metadata. LubimyCzytac coverage is strongest for Polish literature and weakest for niche English-only titles. |
-| Network errors | Confirm your Booklore instance can reach lubimyczytac.pl (check firewalls, DNS, and proxy settings). |
+| Network errors | Confirm your Grimmory instance can reach lubimyczytac.pl (check firewalls, DNS, and proxy settings). |
 
 :::note[Web Scraping]
-LubimyCzytac doesn't provide a public API, so Booklore uses web scraping. This is reliable but may occasionally break if the LubimyCzytac website structure changes. If metadata fetching suddenly stops working for this provider, check for a Booklore update.
+LubimyCzytac doesn't provide a public API, so Grimmory uses web scraping. This is reliable but may occasionally break if the LubimyCzytac website structure changes. If metadata fetching suddenly stops working for this provider, check for a Grimmory update.
 :::

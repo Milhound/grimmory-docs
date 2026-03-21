@@ -41,7 +41,7 @@ booklore:
 
 #### **B. Avoid Container Conflicts:**
 
-To prevent your computer from getting confused between your "real" Booklore and this "test" version, you must give the `container_name` a unique name.
+To prevent your computer from getting confused between your "real" Grimmory and this "test" version, you must give the `container_name` a unique name.
 
 ```yaml
 booklore:
@@ -65,13 +65,13 @@ Open your terminal or command prompt inside your sandbox folder and run:
 | Error Message                      | Solution                                                                                                     |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | "container name is already in use" | Ensure your test containers have a unique name. Refer to Step 3B.                                            |
-| "port is already allocated"        | Your "real" Booklore (or another app) is likely still running. Stop it and try `docker compose up -d` again. |
+| "port is already allocated"        | Your "real" Grimmory (or another app) is likely still running. Stop it and try `docker compose up -d` again. |
 
 ### Checking Logs
 
 If the app doesn't start or crashes, the logs will tell us why. Run these in your terminal:
 
-- **Booklore Logs:** `docker compose logs booklore`
+- **Grimmory Logs:** `docker compose logs booklore`
 - **Database Logs:** `docker compose logs mariadb`
 
 ### Resetting the Test Database
@@ -90,5 +90,5 @@ This deletes all library metadata inside your testing environment. Books remain 
 
 ## 💡 Tester Tips
 
-- **Isolate Instances:** We strongly recommend stopping your "real" Booklore instance while testing the "Beta" version. This prevents confusion and keeps your computer's resources focused on the test.
+- **Isolate Instances:** We strongly recommend stopping your "real" Grimmory instance while testing the "Beta" version. This prevents confusion and keeps your computer's resources focused on the test.
 - **Small Batches:** Don't import your whole library at once. Test the new features with 5–10 books first to ensure everything is stable.

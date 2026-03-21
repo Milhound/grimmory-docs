@@ -1,8 +1,8 @@
 # Kobo Integration
 
-Kobo sync lets you send books from Booklore to your Kobo eReader and keep reading progress in sync between both. You control what gets synced through a dedicated Kobo shelf: add a book to the shelf and it appears on your device, remove it and it disappears on the next sync. Your shelves and magic shelves carry over as Kobo collections, so the organization you've built in Booklore follows you to the device.
+Kobo sync lets you send books from Grimmory to your Kobo eReader and keep reading progress in sync between both. You control what gets synced through a dedicated Kobo shelf: add a book to the shelf and it appears on your device, remove it and it disappears on the next sync. Your shelves and magic shelves carry over as Kobo collections, so the organization you've built in Grimmory follows you to the device.
 
-The integration works by redirecting your Kobo's built-in sync to Booklore instead of the Kobo Store. Your Kobo still functions normally (store purchases, firmware updates), but it also pulls books from your Booklore library.
+The integration works by redirecting your Kobo's built-in sync to Grimmory instead of the Kobo Store. Your Kobo still functions normally (store purchases, firmware updates), but it also pulls books from your Grimmory library.
 
 :::info[File Format Support]
 Kobo sync supports **EPUB** files natively. **CBX** (CBZ/CBR/CB7) files can be converted to EPUB on the fly if enabled in app settings. **PDF** files are not supported.
@@ -14,7 +14,7 @@ Admins can also enable automatic **EPUB to KePub conversion** in app settings, w
 
 ## Reverse Proxy Configuration
 
-If Booklore sits behind a reverse proxy, the proxy needs to forward the right headers for Kobo sync to work. Without these, the Kobo can't authenticate or sync properly.
+If Grimmory sits behind a reverse proxy, the proxy needs to forward the right headers for Kobo sync to work. Without these, the Kobo can't authenticate or sync properly.
 
 ### Nginx
 
@@ -44,9 +44,9 @@ If you use Caddy, Traefik, or another reverse proxy, configure equivalent forwar
 
 ## Step 1: Get Your API Token
 
-Go to **Settings > Devices** in Booklore and scroll down to **Kobo Sync Settings**. Your unique sync token is displayed there. Copy it.
+Go to **Settings > Devices** in Grimmory and scroll down to **Kobo Sync Settings**. Your unique sync token is displayed there. Copy it.
 
-![Booklore Settings > Devices page showing the Kobo Sync Token and Regenerate Token button](/img/kobo/device-settings.jpg)
+![Grimmory Settings > Devices page showing the Kobo Sync Token and Regenerate Token button](/img/kobo/device-settings.jpg)
 
 You can regenerate the token at any time with the **Regenerate Token** button, but you'll need to update the Kobo's config file afterward.
 
@@ -58,7 +58,7 @@ Admins have Kobo Sync enabled by default. Other users need the **Kobo Sync** per
 
 ## Step 2: Configure Your Kobo
 
-Connect your Kobo to your computer via USB. You need to edit a configuration file on the device to point it at your Booklore instance.
+Connect your Kobo to your computer via USB. You need to edit a configuration file on the device to point it at your Grimmory instance.
 
 1. Enable hidden files in your file manager (the folder you need is hidden by default)
 2. Navigate to the Kobo drive and open the `.kobo` folder
@@ -70,7 +70,7 @@ Connect your Kobo to your computer via USB. You need to edit a configuration fil
 
 ![The original Kobo eReader.conf showing api_endpoint pointing to storeapi.kobo.com](/img/kobo/config-before.jpg)
 
-5. Replace the `api_endpoint` value with your Booklore URL followed by `/api/kobo/` and your token:
+5. Replace the `api_endpoint` value with your Grimmory URL followed by `/api/kobo/` and your token:
 
 **Local network (no reverse proxy):**
 ```text
@@ -82,17 +82,17 @@ api_endpoint=http://192.168.1.100:6060/api/kobo/your-token-here
 api_endpoint=https://booklore.example.com/api/kobo/your-token-here
 ```
 
-![The modified Kobo eReader.conf with api_endpoint pointing to the Booklore instance](/img/kobo/config-after.jpg)
+![The modified Kobo eReader.conf with api_endpoint pointing to the Grimmory instance](/img/kobo/config-after.jpg)
 
 6. Save the file and safely eject your Kobo
 
-That's the only device-side configuration needed. From now on, when your Kobo syncs, it talks to Booklore.
+That's the only device-side configuration needed. From now on, when your Kobo syncs, it talks to Grimmory.
 
 ---
 
 ## Step 3: Sync Books
 
-With the Kobo configured, you control what appears on the device through the Kobo shelf in Booklore.
+With the Kobo configured, you control what appears on the device through the Kobo shelf in Grimmory.
 
 1. On any book card, click the three-dot menu and select **Assign Shelf**
 2. Check the **Kobo** shelf and save
@@ -101,21 +101,21 @@ With the Kobo configured, you control what appears on the device through the Kob
 
 3. Repeat for all books you want on the device. The Kobo shelf shows everything queued for sync.
 
-![Booklore's Kobo shelf view showing 7 books ready to sync](/img/kobo/shelf-with-books.jpg)
+![Grimmory's Kobo shelf view showing 7 books ready to sync](/img/kobo/shelf-with-books.jpg)
 
 4. On your Kobo, go to **My Books**, tap the sync icon in the top-right corner, and tap **Sync now**
 
 ![Kobo device showing the Sync complete dialog with Sync now button](/img/kobo/sync-button.jpg)
 
-5. Your Booklore books appear on the device, ready to read
+5. Your Grimmory books appear on the device, ready to read
 
-![Kobo device My Books screen showing the synced books from Booklore](/img/kobo/synced-books.jpg)
+![Kobo device My Books screen showing the synced books from Grimmory](/img/kobo/synced-books.jpg)
 
 ---
 
 ## Shelves as Collections
 
-Your Booklore shelves (including magic shelves) automatically sync to the Kobo as collections. This means the shelf organization you've set up in Booklore is mirrored on the device.
+Your Grimmory shelves (including magic shelves) automatically sync to the Kobo as collections. This means the shelf organization you've set up in Grimmory is mirrored on the device.
 
 There's one important filter: only books that are in your Kobo shelf appear in collections on the device. If your "Favorites" shelf has 10 books but only 4 of those are also in the Kobo shelf, the "Favorites" collection on the Kobo shows just those 4. Shelves with no Kobo-synced books don't appear as collections at all.
 
@@ -135,15 +135,15 @@ This gives you full control. The Kobo shelf determines *which* books are on the 
 
 ![Kobo removal dialog with Remove download and Remove from My Books options](/img/kobo/remove-confirm.jpg)
 
-3. Tap **Sync now** to push the change back to Booklore
+3. Tap **Sync now** to push the change back to Grimmory
 
 ![Kobo after removal showing one fewer book, with Sync complete dialog](/img/kobo/sync-after-removal.jpg)
 
-The book is removed from your Kobo shelf in Booklore but stays in your library. It's not deleted, just unsynced.
+The book is removed from your Kobo shelf in Grimmory but stays in your library. It's not deleted, just unsynced.
 
-![Booklore Kobo shelf after sync showing the book has been removed from the shelf](/img/kobo/shelf-after-removal.jpg)
+![Grimmory Kobo shelf after sync showing the book has been removed from the shelf](/img/kobo/shelf-after-removal.jpg)
 
-### From Booklore
+### From Grimmory
 
 1. Go to your Kobo shelf
 2. Click the three-dot menu on the book and select **Assign Shelf**
@@ -154,11 +154,11 @@ The book is removed from your Kobo shelf in Booklore but stays in your library. 
 
 ## Reading Progress
 
-When you read a book on your Kobo, the reading progress syncs back to Booklore. It appears on the book's detail page as a percentage labeled **Kobo Progress** with a progress indicator.
+When you read a book on your Kobo, the reading progress syncs back to Grimmory. It appears on the book's detail page as a percentage labeled **Kobo Progress** with a progress indicator.
 
 ![Book detail page showing Kobo Progress at 11% alongside other metadata](/img/kobo/synced-progress.jpg)
 
-Click the reset icon next to the progress to clear it in Booklore. This does not affect the reading position on the device.
+Click the reset icon next to the progress to clear it in Grimmory. This does not affect the reading position on the device.
 
 ---
 
@@ -183,7 +183,7 @@ Once granted, the user can find their own sync token in **Settings > Devices** a
 |---------|---------------|
 | Books not appearing on Kobo | Make sure the books are in your Kobo shelf, then trigger a sync on the device. Check that the `api_endpoint` in the config file is correct and reachable from the Kobo's network. |
 | Sync hangs or fails | If behind a reverse proxy, verify the proxy headers and buffer settings are configured (see above). The Kobo sends large headers that default buffer sizes will reject. |
-| "Store unavailable" on Kobo | The Kobo can't reach Booklore. Check the URL in `api_endpoint`, make sure the port is accessible, and confirm HTTPS is working if you're using it. |
+| "Store unavailable" on Kobo | The Kobo can't reach Grimmory. Check the URL in `api_endpoint`, make sure the port is accessible, and confirm HTTPS is working if you're using it. |
 | Reading progress not syncing back | Progress syncs during the next device sync. Make sure you trigger a sync on the Kobo after reading. |
 | PDF books not syncing | PDF is not supported for Kobo sync. Only EPUB (and optionally CBX with conversion) files are synced. |
 | Token changed, Kobo won't sync | If you regenerated your token, update the `api_endpoint` line in the Kobo's config file with the new token. |

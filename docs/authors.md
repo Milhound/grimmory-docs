@@ -1,6 +1,6 @@
 # ✍️ Authors
 
-Booklore automatically builds an author catalog from your book metadata. Click **Authors** in the sidebar to explore your collection organized by who wrote it.
+Grimmory automatically builds an author catalog from your book metadata. Click **Authors** in the sidebar to explore your collection organized by who wrote it.
 
 ---
 

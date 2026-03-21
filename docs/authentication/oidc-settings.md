@@ -1,8 +1,8 @@
 # ⚙️ OIDC Settings
 
-OpenID Connect (OIDC) lets your users sign in to Booklore with the same account they use for all your other self-hosted apps. Instead of managing separate passwords, you delegate authentication to a central identity provider like [Authentik](https://goauthentik.io/), [Keycloak](https://www.keycloak.org/), [Authelia](https://www.authelia.com/), or [Pocket ID](https://pocket-id.org/). Users click one button, authenticate once, and they're in.
+OpenID Connect (OIDC) lets your users sign in to Grimmory with the same account they use for all your other self-hosted apps. Instead of managing separate passwords, you delegate authentication to a central identity provider like [Authentik](https://goauthentik.io/), [Keycloak](https://www.keycloak.org/), [Authelia](https://www.authelia.com/), or [Pocket ID](https://pocket-id.org/). Users click one button, authenticate once, and they're in.
 
-Booklore's OIDC implementation handles the entire token exchange on the server side using the Authorization Code flow with PKCE, so secrets never touch the browser. It also supports back-channel logout, automatic user provisioning, and group-based permission mapping, giving you a complete SSO solution that scales from a single household to a busy shared server.
+Grimmory's OIDC implementation handles the entire token exchange on the server side using the Authorization Code flow with PKCE, so secrets never touch the browser. It also supports back-channel logout, automatic user provisioning, and group-based permission mapping, giving you a complete SSO solution that scales from a single household to a busy shared server.
 
 :::info[Looking for provider-specific setup?]
 This page is a comprehensive reference for all OIDC settings. If you want a step-by-step walkthrough for a specific provider, start with one of these guides instead:
@@ -31,7 +31,7 @@ You can run both methods side by side. Users who have both a local password and 
 
 ## 🌐 Provider Configuration
 
-This is where you connect Booklore to your identity provider. You'll need to create a client/application in your provider first (the provider-specific guides walk through this), then enter the credentials here.
+This is where you connect Grimmory to your identity provider. You'll need to create a client/application in your provider first (the provider-specific guides walk through this), then enter the credentials here.
 
 ![Provider Configuration](/img/authentication/oidc-settings/provider-configuration.png)
 
@@ -42,14 +42,14 @@ This is where you connect Booklore to your identity provider. You'll need to cre
 | **Provider Name** | A human-readable name like `Authentik` or `My SSO` | Shown on the login button. Users see "Sign in with \<this name\>". |
 | **Client ID** | The client/application ID from your provider | Copy this exactly from your provider's dashboard. |
 | **Client Secret** | The client secret, if your provider requires one | Leave empty for **public clients** (most common for self-hosted setups using PKCE). Only needed for **confidential clients**. |
-| **Issuer URI** | Your provider's OIDC issuer URL | Booklore appends `/.well-known/openid-configuration` to this URL to auto-discover all endpoints. |
+| **Issuer URI** | Your provider's OIDC issuer URL | Grimmory appends `/.well-known/openid-configuration` to this URL to auto-discover all endpoints. |
 | **Scopes** | Space-separated list of OIDC scopes | Defaults to `openid profile email groups offline_access` if left empty. For Microsoft Entra ID, use `openid profile email offline_access` (without `groups`). |
 | **Session Duration** | How long OIDC sessions last (in hours) | Leave on "System default" unless you want OIDC sessions to differ from local ones. |
 
 :::tip[Public vs. Confidential Clients]
 Most self-hosted identity providers work perfectly with **public clients + PKCE**, which is the more secure modern approach for browser-based apps. You don't need a client secret for this.
 
-Use a **confidential client** (with a secret) only if your provider requires it or your security policy mandates it. Booklore supports both.
+Use a **confidential client** (with a secret) only if your provider requires it or your security policy mandates it. Grimmory supports both.
 :::
 
 #### Finding Your Issuer URI
@@ -65,17 +65,17 @@ The issuer URI varies by provider. Here are common patterns:
 
 ### Claim Mappings
 
-OIDC providers send user information as "claims" inside tokens. Different providers use different claim names for the same data. Claim mappings tell Booklore which claim to read for each user field.
+OIDC providers send user information as "claims" inside tokens. Different providers use different claim names for the same data. Claim mappings tell Grimmory which claim to read for each user field.
 
-| Booklore Field | Default Claim | What it does |
+| Grimmory Field | Default Claim | What it does |
 |----------------|---------------|-------------|
-| **Username** | `preferred_username` | Becomes the Booklore username. This is what users see in the app, and it's how Booklore matches returning OIDC users to existing accounts. |
+| **Username** | `preferred_username` | Becomes the Grimmory username. This is what users see in the app, and it's how Grimmory matches returning OIDC users to existing accounts. |
 | **Email** | `email` | The user's email address. Used for notifications and email-to-device features. |
 | **Display Name** | `name` | Shown in the UI as the user's name. Falls back to the username if not provided. |
 | **Groups** | `groups` | A list of group names from the provider. Used for [Group Mapping](#group-mapping) to automatically assign permissions. |
 
 :::danger[Username Matching is Case-Sensitive]
-If your provider sends `JohnDoe` but the Booklore account is `johndoe`, the login will fail. Make sure usernames match exactly. When in doubt, use the `preferred_username` claim, which most providers set to a lowercase value.
+If your provider sends `JohnDoe` but the Grimmory account is `johndoe`, the login will fail. Make sure usernames match exactly. When in doubt, use the `preferred_username` claim, which most providers set to a lowercase value.
 :::
 
 #### Common Claim Names by Provider
@@ -91,7 +91,7 @@ Not sure what claim names your provider uses? Here's a quick reference:
 
 ### Test Connection
 
-Before saving, click **Test Connection** to make sure Booklore can talk to your provider. The test runs a series of checks:
+Before saving, click **Test Connection** to make sure Grimmory can talk to your provider. The test runs a series of checks:
 
 - **Discovery document** reachable
 - **Authorization, token, and JWKS endpoints** present
@@ -107,11 +107,11 @@ Checks that pass show a green checkmark. Warnings (yellow) mean the feature will
 
 ## 📋 Provider Configuration Reference
 
-Once you save your provider configuration, Booklore shows a reference panel with the exact values you need to paste into your identity provider's client settings. Each value has a copy button.
+Once you save your provider configuration, Grimmory shows a reference panel with the exact values you need to paste into your identity provider's client settings. Each value has a copy button.
 
 ![Provider Configuration Reference](/img/authentication/oidc-settings/provider-reference.png)
 
-These values are auto-generated based on your Booklore instance URL. You don't need to edit them; just copy them into your provider.
+These values are auto-generated based on your Grimmory instance URL. You don't need to edit them; just copy them into your provider.
 
 | Value | Where to put it in your provider | Example |
 |-------|----------------------------------|---------|
@@ -123,9 +123,9 @@ These values are auto-generated based on your Booklore instance URL. You don't n
 | **Grant Type** | Allowed grant types | `Authorization Code` |
 
 :::info[What is Back-Channel Logout?]
-When a user logs out from your identity provider (for example, clicking "Log out" in Authentik), back-channel logout tells Booklore to immediately end that user's session. Without it, the user would stay logged in to Booklore until their token expires, even though they've already logged out everywhere else.
+When a user logs out from your identity provider (for example, clicking "Log out" in Authentik), back-channel logout tells Grimmory to immediately end that user's session. Without it, the user would stay logged in to Grimmory until their token expires, even though they've already logged out everywhere else.
 
-This is a server-to-server call, so the Back-Channel Logout URI must be reachable from your provider's server, not just from the user's browser. If your provider and Booklore run on the same Docker network, use the internal hostname (e.g., `http://booklore:8080/api/v1/auth/oidc/backchannel-logout`).
+This is a server-to-server call, so the Back-Channel Logout URI must be reachable from your provider's server, not just from the user's browser. If your provider and Grimmory run on the same Docker network, use the internal hostname (e.g., `http://booklore:8080/api/v1/auth/oidc/backchannel-logout`).
 :::
 
 ---
@@ -166,32 +166,32 @@ services:
       - FORCE_DISABLE_OIDC=true
 ```
 
-Restart Booklore. OIDC is now completely disabled regardless of database settings. Remove the variable once you've fixed the issue.
+Restart Grimmory. OIDC is now completely disabled regardless of database settings. Remove the variable once you've fixed the issue.
 
 ---
 
 ## 👥 User Provisioning
 
-When someone logs in via OIDC for the first time, what should happen? User provisioning controls whether Booklore creates the account automatically and what permissions it starts with.
+When someone logs in via OIDC for the first time, what should happen? User provisioning controls whether Grimmory creates the account automatically and what permissions it starts with.
 
 ![User Provisioning](/img/authentication/oidc-settings/user-provisioning.png)
 
 ### Automatic User Provisioning
 
-**Enabled (recommended for most setups):** Any user who successfully authenticates through your OIDC provider gets a Booklore account automatically. No admin action needed. The account is created with the default permissions and library access you configure below.
+**Enabled (recommended for most setups):** Any user who successfully authenticates through your OIDC provider gets a Grimmory account automatically. No admin action needed. The account is created with the default permissions and library access you configure below.
 
-**Disabled:** Users must be manually created in Booklore before they can log in via OIDC. The admin creates the user with a username that exactly matches the OIDC username claim. Good for high-security environments where you want explicit approval for every user.
+**Disabled:** Users must be manually created in Grimmory before they can log in via OIDC. The admin creates the user with a username that exactly matches the OIDC username claim. Good for high-security environments where you want explicit approval for every user.
 
 ### Link Existing Local Accounts
 
 This setting matters when you're migrating from local authentication to OIDC and you have existing users who already have reading progress, bookmarks, and shelves.
 
-**Enabled:** When a user logs in via OIDC and a local account with the same username already exists, Booklore automatically links the OIDC identity to that account. The user keeps everything: reading progress, bookmarks, shelves, permissions, library access. The account is upgraded to OIDC authentication.
+**Enabled:** When a user logs in via OIDC and a local account with the same username already exists, Grimmory automatically links the OIDC identity to that account. The user keeps everything: reading progress, bookmarks, shelves, permissions, library access. The account is upgraded to OIDC authentication.
 
 **Disabled:** Local accounts and OIDC accounts are kept separate. Only accounts originally created through OIDC (or already linked) can be matched.
 
 :::tip[Migration Strategy]
-If you're transitioning an existing Booklore instance from local auth to OIDC:
+If you're transitioning an existing Grimmory instance from local auth to OIDC:
 1. Enable "Link Existing Local Accounts"
 2. Enable OIDC but keep local login available
 3. Ask users to log in via OIDC once. Their accounts are automatically linked.
@@ -230,9 +230,9 @@ Select which libraries new users can access. Users only see books in their assig
 
 ## 🏷️ Group Mapping {#group-mapping}
 
-Group mapping is the most powerful feature of Booklore's OIDC integration. It lets you define permission sets in your identity provider using groups, and Booklore automatically applies the right permissions and library access based on which groups a user belongs to.
+Group mapping is the most powerful feature of Grimmory's OIDC integration. It lets you define permission sets in your identity provider using groups, and Grimmory automatically applies the right permissions and library access based on which groups a user belongs to.
 
-Instead of manually configuring each user's permissions in Booklore, you manage everything in your identity provider. Move a user to a different group in Authentik or Keycloak, and their Booklore access updates on next login.
+Instead of manually configuring each user's permissions in Grimmory, you manage everything in your identity provider. Move a user to a different group in Authentik or Keycloak, and their Grimmory access updates on next login.
 
 ![Group Mapping](/img/authentication/oidc-settings/group-mapping.png)
 
@@ -243,16 +243,16 @@ The sync mode determines *how* group mappings are applied on each login.
 | Mode | What happens on each login | Best for |
 |------|---------------------------|----------|
 | **Disabled** | Nothing. Group mappings exist but aren't applied. | When you want to define mappings in advance but aren't ready to use them yet. |
-| **On Login (Replace)** | The user's permissions and libraries are **completely replaced** by what their group mappings define. Any manual changes made in Booklore are overwritten. | Setups where the identity provider is the **single source of truth** for access control. Most common choice. |
-| **On Login (Additive)** | Group-mapped permissions are **added** on top of existing permissions. Nothing is ever removed. | Mixed environments where some permissions are managed via groups and others are granted manually in Booklore. |
+| **On Login (Replace)** | The user's permissions and libraries are **completely replaced** by what their group mappings define. Any manual changes made in Grimmory are overwritten. | Setups where the identity provider is the **single source of truth** for access control. Most common choice. |
+| **On Login (Additive)** | Group-mapped permissions are **added** on top of existing permissions. Nothing is ever removed. | Mixed environments where some permissions are managed via groups and others are granted manually in Grimmory. |
 
 :::danger[Replace Mode Warning]
-In **Replace** mode, if an admin manually grants a user extra permissions in Booklore, those changes are lost the next time the user logs in via OIDC. All permissions come from group mappings only. Make sure your group mappings cover everything users need before enabling this mode.
+In **Replace** mode, if an admin manually grants a user extra permissions in Grimmory, those changes are lost the next time the user logs in via OIDC. All permissions come from group mappings only. Make sure your group mappings cover everything users need before enabling this mode.
 :::
 
 ### Creating Group Mappings
 
-Click **Add Mapping** to define a new mapping. Each mapping links an OIDC group to a set of Booklore permissions.
+Click **Add Mapping** to define a new mapping. Each mapping links an OIDC group to a set of Grimmory permissions.
 
 | Field | What to enter | Example |
 |-------|---------------|---------|
@@ -264,7 +264,7 @@ Click **Add Mapping** to define a new mapping. Each mapping links an OIDC group 
 
 ### How Merging Works
 
-Users often belong to multiple groups. Booklore handles this by **merging** all matching group mappings together:
+Users often belong to multiple groups. Grimmory handles this by **merging** all matching group mappings together:
 
 **Example:** Sarah belongs to two groups in Authentik: `booklore-readers` and `booklore-uploaders`.
 
@@ -285,7 +285,7 @@ For group mapping to work, your OIDC provider must include group names in the to
 
 #### Authentik
 
-Groups are included automatically in the `groups` claim. No extra configuration needed. Set the **Groups Claim** in Booklore to `groups`.
+Groups are included automatically in the `groups` claim. No extra configuration needed. Set the **Groups Claim** in Grimmory to `groups`.
 
 #### Keycloak
 
@@ -299,7 +299,7 @@ Groups are **not** included by default. You need to add a mapper:
    - **Full group path:** OFF (so you get `my-group` instead of `/parent/my-group`)
 4. Save
 
-Set the **Groups Claim** in Booklore to `groups`.
+Set the **Groups Claim** in Grimmory to `groups`.
 
 #### Authelia
 
@@ -317,7 +317,7 @@ identity_providers:
           - groups
 ```
 
-Set the **Groups Claim** in Booklore to `groups`.
+Set the **Groups Claim** in Grimmory to `groups`.
 
 ---
 
@@ -336,7 +336,7 @@ A home server with a few family members. You just want everyone to sign in with 
 - **OIDC-Only Mode:** Disabled (keep password login as backup)
 - **Group Mapping:** Disabled (not needed for a few users)
 
-**Booklore settings:**
+**Grimmory settings:**
 
 | Setting | Value |
 |---------|-------|
@@ -385,11 +385,11 @@ A homelab with 10-20 users, several libraries (Fiction, Non-Fiction, Comics, Aud
 
 **How it works in practice:**
 1. You create these groups in Authentik and assign users to them
-2. When a new user (let's say "Alex") logs into Booklore for the first time via Authentik, Booklore auto-creates their account
+2. When a new user (let's say "Alex") logs into Grimmory for the first time via Authentik, Grimmory auto-creates their account
 3. Alex is in the `booklore-readers` group, so they get Read + Download + OPDS access to Fiction and Non-Fiction
 4. Later, you move Alex to `booklore-power-users` in Authentik
-5. Next time Alex logs in, Booklore automatically upgrades their permissions and grants access to Comics and Audiobooks
-6. No manual Booklore admin work needed
+5. Next time Alex logs in, Grimmory automatically upgrades their permissions and grants access to Comics and Audiobooks
+6. No manual Grimmory admin work needed
 
 ---
 
@@ -404,7 +404,7 @@ A shared server where you want tight control over who gets access. All authentic
 - **Group Sync Mode:** On Login (Replace)
 - **Session Duration:** 8 hours
 
-**Booklore settings:**
+**Grimmory settings:**
 
 | Setting | Value |
 |---------|-------|
@@ -435,7 +435,7 @@ services:
       - /mnt/books:/books
 ```
 
-New users are created manually in Booklore by an admin (auto provisioning is off), but their permissions are managed entirely through Keycloak groups.
+New users are created manually in Grimmory by an admin (auto provisioning is off), but their permissions are managed entirely through Keycloak groups.
 
 ---
 
@@ -443,27 +443,27 @@ New users are created manually in Booklore by an admin (auto provisioning is off
 
 Understanding what happens behind the scenes helps when troubleshooting. Here's the complete flow when a user clicks "Sign in with \<Provider\>":
 
-1. **User clicks the OIDC login button** on the Booklore login page
+1. **User clicks the OIDC login button** on the Grimmory login page
 
-2. **Booklore generates security parameters:** A random state token (stored server-side for CSRF protection), a PKCE code verifier and challenge (stored in the browser's session storage), and a nonce
+2. **Grimmory generates security parameters:** A random state token (stored server-side for CSRF protection), a PKCE code verifier and challenge (stored in the browser's session storage), and a nonce
 
 3. **Browser redirects to the identity provider** with the authorization request, including the code challenge, state, nonce, and requested scopes
 
 4. **User authenticates with the provider** (password, MFA, biometrics, whatever the provider requires)
 
-5. **Provider redirects back to Booklore** with an authorization code and the original state
+5. **Provider redirects back to Grimmory** with an authorization code and the original state
 
-6. **Booklore's backend exchanges the code for tokens** by calling the provider's token endpoint directly (server-to-server). This is where the code verifier proves the request came from the same session that started the flow. If a client secret is configured, it's sent here too.
+6. **Grimmory's backend exchanges the code for tokens** by calling the provider's token endpoint directly (server-to-server). This is where the code verifier proves the request came from the same session that started the flow. If a client secret is configured, it's sent here too.
 
 7. **Backend validates the ID token:** Checks the signature against the provider's public keys (JWKS), verifies the issuer, audience, expiration, nonce, and other security claims
 
 8. **Backend extracts user information** from the token claims and optionally the userinfo endpoint
 
-9. **User is matched or created** in Booklore (based on provisioning settings)
+9. **User is matched or created** in Grimmory (based on provisioning settings)
 
 10. **Group mappings are applied** (if configured)
 
-11. **Booklore issues its own session tokens** and the user is logged in
+11. **Grimmory issues its own session tokens** and the user is logged in
 
 The entire token exchange happens on the server. The browser never sees the OIDC access token, refresh token, or ID token.
 
@@ -479,8 +479,8 @@ The entire token exchange happens on the server. The browser never sees the OIDC
 
 ### Test Connection Fails
 
-- The **Issuer URI** must be reachable from the Booklore server (not from your browser). If running in Docker, use the container network name or ensure the container can reach the external URL.
-- Try curling the discovery endpoint from the Booklore server:
+- The **Issuer URI** must be reachable from the Grimmory server (not from your browser). If running in Docker, use the container network name or ensure the container can reach the external URL.
+- Try curling the discovery endpoint from the Grimmory server:
   ```bash
   curl https://auth.example.com/application/o/booklore/.well-known/openid-configuration
   ```
@@ -488,29 +488,29 @@ The entire token exchange happens on the server. The browser never sees the OIDC
 
 ### Login Redirects to Provider But Comes Back with an Error
 
-- **Redirect URI mismatch:** The redirect URI configured in your provider must exactly match what Booklore generates. Copy it from the Provider Configuration Reference panel. Common mistakes: missing `/oauth2-callback` path, wrong port, `http` vs `https`.
+- **Redirect URI mismatch:** The redirect URI configured in your provider must exactly match what Grimmory generates. Copy it from the Provider Configuration Reference panel. Common mistakes: missing `/oauth2-callback` path, wrong port, `http` vs `https`.
 - **Scopes not allowed:** Make sure `openid`, `profile`, `email`, and `offline_access` are all enabled in your provider's client configuration.
 - **Wrong Client ID or Secret:** Double-check these values. A single extra space can cause a failure.
-- Check Booklore application logs (`docker logs booklore`) for a specific error message.
+- Check Grimmory application logs (`docker logs booklore`) for a specific error message.
 
 ### User Logs In But Gets "User Not Provisioned"
 
-This means auto-provisioning is disabled and no Booklore account matches the OIDC username. Either:
+This means auto-provisioning is disabled and no Grimmory account matches the OIDC username. Either:
 - Enable auto-provisioning, or
-- Manually create a Booklore account with a username that exactly matches the OIDC `preferred_username` claim (case-sensitive)
+- Manually create a Grimmory account with a username that exactly matches the OIDC `preferred_username` claim (case-sensitive)
 
 ### Group Permissions Not Being Applied
 
 1. **Is the Groups Claim configured?** Check the Claim Mappings section. The default is `groups`.
 2. **Does your provider actually send groups?** Not all providers do by default. See the [provider-specific instructions](#setting-up-groups-in-your-provider) above.
 3. **Is Group Sync Mode enabled?** It defaults to Disabled. Set it to **On Login (Replace)** or **On Login (Additive)**.
-4. **Do group names match exactly?** Group claim values are case-sensitive. `Booklore-Admins` is not the same as `booklore-admins`. Check what your provider actually sends by inspecting the token (most providers have a token preview feature).
+4. **Do group names match exactly?** Group claim values are case-sensitive. `Grimmory-Admins` is not the same as `booklore-admins`. Check what your provider actually sends by inspecting the token (most providers have a token preview feature).
 
 ### Sessions Not Syncing (User Stays Logged In After Provider Logout)
 
 - **Back-channel logout** must be configured in your provider. Copy the Back-Channel Logout URI from the reference panel.
 - The logout URI must be reachable **from the provider's server**, not from the browser. If they're on the same Docker network, use the internal hostname.
-- Not all providers support back-channel logout. If yours doesn't, users will stay logged in to Booklore until their session expires naturally.
+- Not all providers support back-channel logout. If yours doesn't, users will stay logged in to Grimmory until their session expires naturally.
 
 ### Locked Out After Enabling OIDC-Only Mode
 
@@ -521,4 +521,4 @@ Two escape hatches:
 
 ### Auto-Redirect Loop
 
-If OIDC-Only Mode is enabled and the provider keeps bouncing back with errors, Booklore has built-in loop protection. After 3 failed redirect attempts, it stops auto-redirecting and shows an error message on the login page with a link to the local login form.
+If OIDC-Only Mode is enabled and the provider keeps bouncing back with errors, Grimmory has built-in loop protection. After 3 failed redirect attempts, it stops auto-redirecting and shows an error message on the login page with a link to the local login form.
