@@ -8,7 +8,7 @@ Navigate to **Settings > Devices** to access this page.
 
 ## 📖 KOReader Sync
 
-Sync your reading progress between your KOReader device and Booklore. When enabled, reading progress updates on your KOReader device are automatically reflected in Booklore.
+Sync your reading progress between your KOReader device and Grimmory. When enabled, reading progress updates on your KOReader device are automatically reflected in Grimmory.
 
 Requires the **KOReader Sync** permission.
 
@@ -19,13 +19,13 @@ Requires the **KOReader Sync** permission.
 | Setting | Description |
 |---------|-------------|
 | **Enable KOReader Sync** | Turns on synchronization. Only available after credentials are saved. |
-| **Sync reading progress with Booklore eBook Reader** | Enables bidirectional sync between KOReader and Booklore's built-in web reader. Progress is approximate and may update by chapter rather than exact page. |
+| **Sync reading progress with Grimmory eBook Reader** | Enables bidirectional sync between KOReader and Grimmory's built-in web reader. Progress is approximate and may update by chapter rather than exact page. |
 
 ### Credentials
 
 | Field | Description |
 |-------|-------------|
-| **KOReader API Path** | The API endpoint to configure on your KOReader device. Auto-generated from your Booklore URL (e.g., `http://your-booklore-domain/api/koreader`). Read-only with a copy button. |
+| **KOReader API Path** | The API endpoint to configure on your KOReader device. Auto-generated from your Grimmory URL (e.g., `http://your-grimmory-domain/api/koreader`). Read-only with a copy button. |
 | **KOReader Username** | Your username for authenticating with the sync service. |
 | **KOReader Password** | Your password (minimum 6 characters). |
 
@@ -39,7 +39,7 @@ On your KOReader device, go to **Tools > Progress sync > Custom sync server** an
 
 ## 📚 Hardcover Integration
 
-Sync your KOReader reading progress from Booklore to your [Hardcover](https://hardcover.app) account. When enabled, progress updates from KOReader are automatically pushed to Hardcover.
+Sync your KOReader reading progress from Grimmory to your [Hardcover](https://hardcover.app) account. When enabled, progress updates from KOReader are automatically pushed to Hardcover.
 
 Requires the **KOReader Sync** or **Kobo Sync** permission.
 
@@ -53,14 +53,14 @@ Requires the **KOReader Sync** or **Kobo Sync** permission.
 | **Hardcover API Key** | Your personal API key from Hardcover. Get it from [hardcover.app/account/api](https://hardcover.app/account/api). This key is private to your account. |
 
 :::info[How It Works]
-When KOReader progress is synced to Booklore, Booklore automatically forwards the update to Hardcover. Books are marked as "Currently Reading" when progress begins and "Read" when progress reaches 99%+. Booklore matches books to Hardcover using the Hardcover book ID stored in metadata.
+When KOReader progress is synced to Grimmory, Grimmory automatically forwards the update to Hardcover. Books are marked as "Currently Reading" when progress begins and "Read" when progress reaches 99%+. Grimmory matches books to Hardcover using the Hardcover book ID stored in metadata.
 :::
 
 ---
 
 ## 📲 Kobo Integration
 
-Sync your Booklore library and reading progress with your Kobo e-reader. Books on your Kobo shelf are delivered to the device, and reading progress can be synced bidirectionally.
+Sync your Grimmory library and reading progress with your Kobo e-reader. Books on your Kobo shelf are delivered to the device, and reading progress can be synced bidirectionally.
 
 Requires the **Kobo Sync** permission.
 
@@ -71,7 +71,7 @@ Requires the **Kobo Sync** permission.
 | Setting | Description |
 |---------|-------------|
 | **Enable Kobo Sync** | Turns on Kobo synchronization. Automatically creates a "Kobo" shelf in your library. Disabling deletes the Kobo shelf. |
-| **Two-Way Reading Progress Sync** | Enables bidirectional sync between Booklore's web reader and your Kobo device. Due to different position formats, accuracy is best-effort and typically accurate to the chapter level. |
+| **Two-Way Reading Progress Sync** | Enables bidirectional sync between Grimmory's web reader and your Kobo device. Due to different position formats, accuracy is best-effort and typically accurate to the chapter level. |
 | **Kobo Sync Token** | Your unique authentication token for the Kobo device. Keep this secure. Use the regenerate button if you need a new token (invalidates the previous one). |
 
 ### Reading Thresholds

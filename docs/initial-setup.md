@@ -1,6 +1,6 @@
 # 👤 Setup Admin User
 
-On first launch, Booklore shows a setup screen to create the initial administrator account. This is a one-time step.
+On first launch, Grimmory shows a setup screen to create the initial administrator account. This is a one-time step.
 
 ---
 

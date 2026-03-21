@@ -91,7 +91,7 @@ Magic Shelves can filter on any of the following book metadata fields, organized
 
 | Field | Key | Type | Description |
 |---|---|---|---|
-| Metadata Score | `metadataScore` | Decimal (0-100) | BookLore's metadata match confidence |
+| Metadata Score | `metadataScore` | Decimal (0-100) | Grimmory's metadata match confidence |
 | Metadata Presence | `metadataPresence` | Composite | Check whether a specific metadata field is populated or empty. Uses `Has`/`Has Not` operators with a sub-selector of ~45 metadata fields |
 
 ### Ratings & Reviews
@@ -960,7 +960,7 @@ Books without a synopsis or description. You'll see these as blank cards when br
 
 #### 42. Low Metadata Match Score
 
-Books where BookLore had less than 50% confidence in the metadata match during import. These may have the wrong cover, wrong description, or data from a completely different edition. Worth reviewing manually to make sure nothing got mixed up.
+Books where Grimmory had less than 50% confidence in the metadata match during import. These may have the wrong cover, wrong description, or data from a completely different edition. Worth reviewing manually to make sure nothing got mixed up.
 
 ```json
 {

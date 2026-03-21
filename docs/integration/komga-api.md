@@ -1,12 +1,12 @@
 # 📚 Komga API Integration Guide
 
-The Komga API allows you to access your Booklore library using popular manga and comic reading applications that support the Komga server standard. This guide will walk you through setting up the Komga API and connecting your favorite reading apps to your Booklore collection.
+The Komga API allows you to access your Grimmory library using popular manga and comic reading applications that support the Komga server standard. This guide will walk you through setting up the Komga API and connecting your favorite reading apps to your Grimmory collection.
 
 ---
 
 ## 🔧 What is the Komga API?
 
-[Komga](https://komga.org/) is a popular media server for comics and manga. Booklore provides a Komga-compatible API layer that enables Komga clients to access your Booklore library. With the Komga API enabled in Booklore, you can:
+[Komga](https://komga.org/) is a popular media server for comics and manga. Grimmory provides a Komga-compatible API layer that enables Komga clients to access your Grimmory library. With the Komga API enabled in Grimmory, you can:
 
 - Browse your library from any Komga-compatible reading app
 - Read comics and manga directly on your mobile device
@@ -18,9 +18,9 @@ The Komga API allows you to access your Booklore library using popular manga and
 
 ## ⚙️ Step 1: Enable the Komga API
 
-First, let's enable the Komga API in your Booklore settings.
+First, let's enable the Komga API in your Grimmory settings.
 
-1. Navigate to **Settings** > **OPDS** in Booklore
+1. Navigate to **Settings** > **OPDS** in Grimmory
 2. Under **Komga API**, toggle **Komga API Enabled** to activate the service
 
 :::info[Note]
@@ -31,7 +31,7 @@ The Komga API shares authentication with the OPDS server and uses OPDS user acco
 
 ## 🔗 Step 2: Get Your Komga API Base URL
 
-Booklore provides the Komga API at a dedicated endpoint:
+Grimmory provides the Komga API at a dedicated endpoint:
 
 ### Komga Base URL
 
@@ -43,7 +43,7 @@ Booklore provides the Komga API at a dedicated endpoint:
 You can copy this URL directly from the **Komga API Endpoint** section in your settings.
 
 :::tip[Network Access]
-Replace `localhost:8080` with your actual Booklore server address when accessing from other devices on your network.
+Replace `localhost:8080` with your actual Grimmory server address when accessing from other devices on your network.
 :::
 
 ---
@@ -63,7 +63,7 @@ The Komga API uses OPDS user credentials for authentication. To access your Komg
 3. Click **Create** to create the OPDS user
 
 :::danger[Security Note]
-OPDS users are separate from your main Booklore account and are specifically for reading app access. Make sure OPDS is enabled to use these credentials with the Komga API.
+OPDS users are separate from your main Grimmory account and are specifically for reading app access. Make sure OPDS is enabled to use these credentials with the Komga API.
 :::
 
 :::warning[Important]
@@ -74,10 +74,10 @@ Passwords are created once and cannot be retrieved later. Make sure to store you
 
 ## ⚙️ Step 4: Configure Group Unknown Series (Optional)
 
-Booklore organizes books differently than Komga:
+Grimmory organizes books differently than Komga:
 
 - **Komga**: Libraries → Series → Books
-- **Booklore**: Libraries → Books (with optional series metadata)
+- **Grimmory**: Libraries → Books (with optional series metadata)
 
 The Komga API automatically creates virtual "series" by grouping books with the same series name in their metadata.
 
@@ -90,7 +90,7 @@ When enabled, books without series metadata are grouped together:
 
 To configure this setting:
 
-1. Navigate to **Settings** > **OPDS** in Booklore
+1. Navigate to **Settings** > **OPDS** in Grimmory
 2. Under **Komga API**, toggle **Group Unknown Series** to your preference
 
 :::tip[Recommendation]
@@ -101,7 +101,7 @@ Keep this enabled if you have many standalone books to avoid cluttering your ser
 
 ## 📱 Step 5: Connect Reading Apps
 
-Now that your Komga API is configured, you can connect various reading apps to access your Booklore library.
+Now that your Komga API is configured, you can connect various reading apps to access your Grimmory library.
 
 ### Popular Komga-Compatible Apps:
 
@@ -118,7 +118,7 @@ Now that your Komga API is configured, you can connect various reading apps to a
 2. Look for **Add Source**, **Add Server**, or **Browse Sources** settings
 3. Find and select the **Komga** source/extension
 4. Configure the Komga source:
-   - **Server URL:** `http://your-booklore-domain/komga`
+   - **Server URL:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Save and browse your library
@@ -127,34 +127,34 @@ Now that your Komga API is configured, you can connect various reading apps to a
 
 ## 🔄 Example: Connecting Koma
 
-Koma is a fork of Mihon. It is centered around comics and comes with a specialized Booklore extension
+Koma is a fork of Mihon. It is centered around comics and comes with a specialized Grimmory extension
 
-### Installing the Booklore Extension
+### Installing the Grimmory Extension
 
 1. Open Koma
 2. Tap **Browse** at the bottom navigation
 3. Tap **Extensions** tab
 4. Use the top menu icon to select **Extension repos**
 5. Add `https://github.com/farfromrefug/extensions-source/releases/latest/download/index.min.json`. Then go back.
-4. Find **Booklore** in the list
-5. Tap **Install** next to the Booklore extension
+4. Find **Grimmory** in the list
+5. Tap **Install** next to the Grimmory extension
 6. Wait for the extension to install
 
-### Configuring the Booklore Source
+### Configuring the Grimmory Source
 
 1. After installation, go back to the **Sources** tab in Browse
-2. Tap the **Booklore** source
+2. Tap the **Grimmory** source
 3. Tap the settings icon (gear icon) in the top right
 4. Enter your connection details:
-   - **Address:** `http://your-booklore-domain/komga`
+   - **Address:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Tap **OK** or **Save**
-6. Go back and tap **Booklore** again to browse your libraries
+6. Go back and tap **Grimmory** again to browse your libraries
 
-### Using Koma with Booklore
+### Using Koma with Grimmory
 
-- **Browse Libraries:** See all your Booklore libraries
+- **Browse Libraries:** See all your Grimmory libraries
 - **Browse Series:** View books grouped by series
 - **Read Online:** Stream pages without downloading entire books
 - **Download:** Download books for offline reading
@@ -186,15 +186,15 @@ Mihon is one of the most popular manga reading apps for Android with excellent K
 2. Tap the **Komga** source
 3. Tap the settings icon (gear icon) in the top right
 4. Enter your connection details:
-   - **Address:** `http://your-booklore-domain/komga`
+   - **Address:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 5. Tap **OK** or **Save**
 6. Go back and tap **Komga** again to browse your libraries
 
-### Using Mihon with Booklore
+### Using Mihon with Grimmory
 
-- **Browse Libraries:** See all your Booklore libraries
+- **Browse Libraries:** See all your Grimmory libraries
 - **Browse Series:** View books grouped by series
 - **Read Online:** Stream pages without downloading entire books
 - **Download:** Download books for offline reading
@@ -214,11 +214,11 @@ Komelia is the official Komga client with cross-platform support.
 1. Open Komelia
 2. Click **Add Server** or the **+** button
 3. Enter your server details:
-   - **Server URL:** `http://your-booklore-domain/komga`
+   - **Server URL:** `http://your-grimmory-domain/komga`
    - **Username:** Your OPDS username
    - **Password:** Your OPDS password
 4. Click **Connect** or **Add**
-5. Browse your Booklore libraries and series
+5. Browse your Grimmory libraries and series
 
 :::info[Komelia Features]
 Komelia provides a desktop and mobile experience optimized for the Komga API with features like collection management, advanced filtering, and read progress sync.
@@ -228,7 +228,7 @@ Komelia provides a desktop and mobile experience optimized for the Komga API wit
 
 ## 📖 Komga API Features
 
-The Booklore Komga API implementation provides comprehensive endpoints for accessing your library:
+The Grimmory Komga API implementation provides comprehensive endpoints for accessing your library:
 
 ### Available Endpoints
 
@@ -258,7 +258,7 @@ The Booklore Komga API implementation provides comprehensive endpoints for acces
 
 #### Collections
 - **List collections** - `GET /komga/api/v1/collections`
-  - Maps to Booklore Magic Shelves
+  - Maps to Grimmory Magic Shelves
   - Supports pagination
 
 #### Users
@@ -286,10 +286,10 @@ GET /komga/api/v1/books/123?clean=true
 
 **❌ Reading App Can't Connect**
 
-- Verify the Komga API is enabled in Booklore settings
+- Verify the Komga API is enabled in Grimmory settings
 - Check that you're using the correct base URL: `http://your-server/komga`
 - Ensure your OPDS username and password are correct
-- Verify network connectivity to your Booklore server
+- Verify network connectivity to your Grimmory server
 - Make sure OPDS is enabled (required for authentication)
 
 **❌ Books Not Appearing**
@@ -302,16 +302,16 @@ GET /komga/api/v1/books/123?clean=true
 
 **❌ Authentication Errors**
 
-- The Komga API uses OPDS user accounts, not your main Booklore account
+- The Komga API uses OPDS user accounts, not your main Grimmory account
 - Create an OPDS user in the Settings → OPDS section
-- Verify the OPDS user exists in Booklore settings
+- Verify the OPDS user exists in Grimmory settings
 - Try creating a new OPDS user if issues persist
 - Ensure OPDS server is enabled
 
 **❌ Series Show as "Unknown Series"**
 
 - This means the books don't have series metadata populated
-- Edit book metadata in Booklore to add series information
+- Edit book metadata in Grimmory to add series information
 - Alternatively, disable "Group Unknown Series" to show each book separately
 
 **❌ Pages Not Loading**
@@ -328,7 +328,7 @@ GET /komga/api/v1/books/123?clean=true
 ### Local Network Access
 
 :::info[Local Network Access]
-Replace `localhost:8080` with your actual Booklore server IP address when connecting from other devices on your local network.
+Replace `localhost:8080` with your actual Grimmory server IP address when connecting from other devices on your local network.
 
 Example: `http://192.168.1.100:8080/komga`
 :::
@@ -336,7 +336,7 @@ Example: `http://192.168.1.100:8080/komga`
 ### Remote Access
 
 :::info[Remote Access]
-Ensure your Booklore server is accessible from the internet. Use HTTPS for secure connections when accessing remotely.
+Ensure your Grimmory server is accessible from the internet. Use HTTPS for secure connections when accessing remotely.
 
 Example: `https://booklore.yourdomain.com/komga`
 :::
@@ -344,14 +344,14 @@ Example: `https://booklore.yourdomain.com/komga`
 ### Firewall Settings
 
 :::warning[Firewall Settings]
-Ensure your Booklore server port is accessible and your firewall allows Komga API connections on the appropriate port.
+Ensure your Grimmory server port is accessible and your firewall allows Komga API connections on the appropriate port.
 :::
 
 ---
 
 ## 🆚 Komga API vs OPDS
 
-Both APIs allow external access to your Booklore library, but they serve different purposes:
+Both APIs allow external access to your Grimmory library, but they serve different purposes:
 
 | Feature | Komga API | OPDS |
 |---------|-----------|------|
@@ -372,7 +372,7 @@ Both APIs allow external access to your Booklore library, but they serve differe
 
 ## 📋 API Compatibility
 
-The Booklore Komga API aims to be compatible with Komga v1.x API. While not all endpoints are implemented, the core functionality needed for reading and browsing is fully supported.
+The Grimmory Komga API aims to be compatible with Komga v1.x API. While not all endpoints are implemented, the core functionality needed for reading and browsing is fully supported.
 
 ### Supported Features:
 - ✅ Library browsing
@@ -386,7 +386,7 @@ The Booklore Komga API aims to be compatible with Komga v1.x API. While not all 
 - ✅ Clean mode responses
 
 ### Known Limitations:
-- ⚠️ Read progress tracking from Komga clients is not synchronized with Booklore
+- ⚠️ Read progress tracking from Komga clients is not synchronized with Grimmory
 - ⚠️ Some advanced Komga features may not be implemented
 - ⚠️ Collection support is mapped to Magic Shelves (limited functionality)
 

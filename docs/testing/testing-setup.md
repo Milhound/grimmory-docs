@@ -15,7 +15,7 @@ Before you start, you need to have [Docker](https://docs.docker.com/get-docker/)
 
 ### **Step 1. Create a Sandbox Folder**
 
-To prevent any risk to your actual data, create a brand new folder on your computer (e.g., `booklore-test`). Do all your work inside this folder.
+To prevent any risk to your actual data, create a brand new folder on your computer (e.g., `grimmory-test`). Do all your work inside this folder.
 
 ### **Step 2. Prepare Configuration Files**
 
@@ -31,21 +31,20 @@ Open the `docker-compose.yml` file in your sandbox folder using a text editor (N
 
 #### **A. Point to the Latest Pre-release Image:**
 
-Find the line starting with `image:` and update it with the latest `develop-` tag provided by the team at https://github.com/booklore-app/booklore/pkgs/container/booklore/
+Find the line starting with `image:` and update it with the latest `nightly-` tag provided by the team at https://github.com/grimmory-tools/grimmory/pkgs/container/grimmory/
 
 ```yaml
-booklore:
-  image: booklore/booklore:develop-2f6e8570
-  # Alternative: ghcr.io/booklore-app/booklore:develop-2f6e8570
+grimmory:
+  image: grimmory/grimmory:nightly-20260321-55c0ac0
 ```
 
 #### **B. Avoid Container Conflicts:**
 
-To prevent your computer from getting confused between your "real" Booklore and this "test" version, you must give the `container_name` a unique name.
+To prevent your computer from getting confused between your "real" Grimmory and this "test" version, you must give the `container_name` a unique name.
 
 ```yaml
-booklore:
-  container_name: booklore-test
+grimmory:
+  container_name: grimmory-test
 
 mariadb:
   container_name: mariadb-test
@@ -65,13 +64,13 @@ Open your terminal or command prompt inside your sandbox folder and run:
 | Error Message                      | Solution                                                                                                     |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | "container name is already in use" | Ensure your test containers have a unique name. Refer to Step 3B.                                            |
-| "port is already allocated"        | Your "real" Booklore (or another app) is likely still running. Stop it and try `docker compose up -d` again. |
+| "port is already allocated"        | Your "real" Grimmory (or another app) is likely still running. Stop it and try `docker compose up -d` again. |
 
 ### Checking Logs
 
 If the app doesn't start or crashes, the logs will tell us why. Run these in your terminal:
 
-- **Booklore Logs:** `docker compose logs booklore`
+- **Grimmory Logs:** `docker compose logs grimmory`
 - **Database Logs:** `docker compose logs mariadb`
 
 ### Resetting the Test Database
@@ -90,5 +89,5 @@ This deletes all library metadata inside your testing environment. Books remain 
 
 ## 💡 Tester Tips
 
-- **Isolate Instances:** We strongly recommend stopping your "real" Booklore instance while testing the "Beta" version. This prevents confusion and keeps your computer's resources focused on the test.
+- **Isolate Instances:** We strongly recommend stopping your "real" Grimmory instance while testing the "Beta" version. This prevents confusion and keeps your computer's resources focused on the test.
 - **Small Batches:** Don't import your whole library at once. Test the new features with 5–10 books first to ensure everything is stable.

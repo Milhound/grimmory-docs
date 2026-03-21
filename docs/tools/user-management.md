@@ -112,7 +112,7 @@ Permissions are organized into categories. Each permission is a checkbox that ca
 
 | Permission | Description |
 |------------|-------------|
-| **Bulk Reset Booklore Read Progress** | Reset reading progress tracked by Booklore |
+| **Bulk Reset Grimmory Read Progress** | Reset reading progress tracked by Grimmory |
 | **Bulk Reset KOReader Read Progress** | Reset KOReader sync progress |
 | **Bulk Reset Book Read Status** | Reset read/unread status for books |
 

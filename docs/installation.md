@@ -1,6 +1,6 @@
 # 🛠️ Installation Guide
 
-Get BookLore up and running in minutes with Docker Compose.
+Get Grimmory up and running in minutes with Docker Compose.
 
 :::tip[Quick Start]
 If you're experienced with Docker, skip to [Step 2](#step-2-create-the-docker-composeyml-file) to grab the configuration.
@@ -22,10 +22,10 @@ If you're experienced with Docker, skip to [Step 2](#step-2-create-the-docker-co
 ### Step 1: Create the Directory Structure
 
 ```bash
-mkdir -p ~/booklore/mariadb/config
-mkdir -p ~/booklore/data
-mkdir -p ~/booklore/books
-mkdir -p ~/booklore/bookdrop
+mkdir -p ~/grimmory/mariadb/config
+mkdir -p ~/grimmory/data
+mkdir -p ~/grimmory/books
+mkdir -p ~/grimmory/bookdrop
 ```
 
 | Directory | Purpose |
@@ -39,31 +39,31 @@ mkdir -p ~/booklore/bookdrop
 
 ### Step 2: Create the `docker-compose.yml` File
 
-Navigate to your BookLore directory:
+Navigate to your Grimmory directory:
 
 ```bash
-cd ~/booklore
+cd ~/grimmory
 ```
 
 Create a `.env` file:
 
 ```ini
-# BookLore Application Settings
+# Grimmory Application Settings
 APP_USER_ID=1000
 APP_GROUP_ID=1000
 TZ=Etc/UTC
 BOOKLORE_PORT=6060
 
-# Database Connection (BookLore)
-DATABASE_URL=jdbc:mariadb://mariadb:3306/booklore
-DB_USER=booklore
-DB_PASSWORD=ChangeMe_BookLoreApp_2025!
+# Database Connection (Grimmory)
+DATABASE_URL=jdbc:mariadb://mariadb:3306/grimmory
+DB_USER=grimmory
+DB_PASSWORD=ChangeMe_GrimmoryApp_2025!
 
 # MariaDB Container Settings
 DB_USER_ID=1000
 DB_GROUP_ID=1000
 MYSQL_ROOT_PASSWORD=ChangeMe_MariaDBRoot_2025!
-MYSQL_DATABASE=booklore
+MYSQL_DATABASE=grimmory
 ```
 
 :::warning[Security]
@@ -74,9 +74,9 @@ Create `docker-compose.yml`:
 
 ````yaml
 services:
-  booklore:
-    image: booklore/booklore:latest
-    container_name: booklore
+  grimmory:
+    image: grimmory/grimmory:latest
+    container_name: grimmory
     environment:
       - USER_ID=${APP_USER_ID}
       - GROUP_ID=${APP_GROUP_ID}
@@ -125,7 +125,7 @@ services:
 - **Image registry:** Alternatively use `ghcr.io/booklore-app/booklore:latest` from GitHub Container Registry.
 
 :::tip[Version Pinning]
-For production, pin to specific versions (e.g., `booklore/booklore:v1.2.3`). Check [releases](https://github.com/booklore-app/booklore/releases).
+For production, pin to specific versions (e.g., `grimmory/grimmory:v1.2.3`). Check [releases](https://github.com/grimmory-tools/grimmory/releases).
 :::
 
 ---
@@ -136,11 +136,11 @@ For production, pin to specific versions (e.g., `booklore/booklore:v1.2.3`). Che
 docker compose up -d
 ```
 
-Monitor startup with `docker compose logs -f`. Wait for MariaDB to show "(healthy)" before accessing BookLore.
+Monitor startup with `docker compose logs -f`. Wait for MariaDB to show "(healthy)" before accessing Grimmory.
 
 ---
 
-### Step 4: Access BookLore
+### Step 4: Access Grimmory
 
 Open your browser and navigate to:
 
@@ -157,7 +157,7 @@ Or from another device on your network: `http://YOUR_SERVER_IP:6060`
 ### Container Won't Start
 
 ```bash
-docker compose logs booklore
+docker compose logs grimmory
 docker compose logs mariadb
 ```
 
@@ -170,7 +170,7 @@ Verify MariaDB is healthy with `docker compose ps mariadb`. Ensure `DATABASE_PAS
 **Reset database (last resort):**
 ```bash
 docker compose down
-rm -rf ~/booklore/mariadb/config/*
+rm -rf ~/grimmory/mariadb/config/*
 docker compose up -d
 ```
 
@@ -182,7 +182,7 @@ This deletes all library metadata. Books remain but need re-importing.
 
 Find your user/group IDs with `id -u` and `id -g`, update `.env` accordingly, then fix directory ownership:
 ```bash
-sudo chown -R $USER:$USER ~/booklore
+sudo chown -R $USER:$USER ~/grimmory
 ```
 
 ### Port Already in Use

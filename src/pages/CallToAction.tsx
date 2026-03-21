@@ -37,7 +37,7 @@ function CallToAction() {
           <h2 className={styles.ctaTitle}>Ready to Start Your Journey?</h2>
           <p className={styles.ctaSubtitle}>
             Join thousands of book lovers who are already organizing their digital libraries with
-            Booklore. Open source, self-hosted, and completely free.
+            Grimmory. Open source, self-hosted, and completely free.
           </p>
           <div className={styles.ctaButtons}>
             <Link className={`button button--lg ${styles.primaryButton}`} to="/docs/getting-started">
@@ -63,7 +63,7 @@ function CallToAction() {
             </Link>
             <a
               className={`button button--lg ${styles.secondaryButton}`}
-              href="https://github.com/booklore-app/booklore"
+              href="https://github.com/grimmory-tools/grimmory"
               target="_blank"
               rel="noopener noreferrer"
               style={{background: 'rgba(255, 255, 255, 0.1)'}}

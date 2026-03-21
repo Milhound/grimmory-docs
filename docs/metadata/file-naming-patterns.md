@@ -8,7 +8,7 @@ Configure automatic file organization using metadata placeholders. Patterns are 
 
 ## How Patterns Work
 
-Patterns are text templates with placeholders in curly braces. When a file is processed, Booklore replaces each placeholder with the book's actual metadata and renames/moves the file accordingly.
+Patterns are text templates with placeholders in curly braces. When a file is processed, Grimmory replaces each placeholder with the book's actual metadata and renames/moves the file accordingly.
 
 ```
 {authors}/{series}/{seriesIndex} - {title}

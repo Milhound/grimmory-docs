@@ -21,7 +21,7 @@ Once you have a default provider and a default recipient configured, you can sen
 
 ## 📧 Email Providers
 
-An email provider is an SMTP server configuration that Booklore uses to send books. You can add multiple providers and set one as the default.
+An email provider is an SMTP server configuration that Grimmory uses to send books. You can add multiple providers and set one as the default.
 
 ### Adding a Provider
 
@@ -106,7 +106,7 @@ Select **Email Book > Custom Send** from the book card menu to open a dialog whe
 The dialog shows the file size for each format and warns you if a file exceeds 25 MB.
 
 :::info[No Format Conversion]
-Books are sent as-is in their original format. Booklore does not convert between formats before sending.
+Books are sent as-is in their original format. Grimmory does not convert between formats before sending.
 :::
 
 ---
@@ -120,7 +120,7 @@ Gmail is the most common provider. Here's how to set it up:
 1. Go to [Google Account Security Settings](https://myaccount.google.com/security)
 2. Ensure **2-Step Verification** is enabled (required for app passwords)
 3. Navigate to **App Passwords**
-4. Select **Mail** as the app type, choose **Other**, enter "Booklore"
+4. Select **Mail** as the app type, choose **Other**, enter "Grimmory"
 5. Click **Generate** and copy the 16-character password
 
 :::warning[Save Your App Password]

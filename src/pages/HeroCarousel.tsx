@@ -134,7 +134,7 @@ export default function HeroCarousel() {
             transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          <h2 className={styles.carouselTitle}>See Booklore in Action</h2>
+          <h2 className={styles.carouselTitle}>See Grimmory in Action</h2>
           <p className={styles.carouselSubtitle}>
             A modern, beautiful interface designed for book lovers
           </p>
@@ -153,7 +153,7 @@ export default function HeroCarousel() {
         >
           <Splide
             ref={mainRef}
-            aria-label="Booklore highlights"
+            aria-label="Grimmory highlights"
             options={{
               type: 'loop',
               perPage: 3,

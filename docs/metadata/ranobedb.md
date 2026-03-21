@@ -18,7 +18,7 @@ Open **Settings > Metadata 2**, find **Ranobedb** in the provider list, flip the
 
 Once enabled, RanobeDB appears as a priority option in the Advanced Metadata Fetch dialog. You can set it as Priority 1, 2, 3, or 4 for any individual field.
 
-**For light novels**, set RanobeDB as Priority 1 for most fields. Fallbacks to Google Books or Goodreads are optional but may not match well since light novel titles often differ across platforms. If RanobeDB doesn't have data for a particular field, Booklore automatically tries the next provider in your priority list.
+**For light novels**, set RanobeDB as Priority 1 for most fields. Fallbacks to Google Books or Goodreads are optional but may not match well since light novel titles often differ across platforms. If RanobeDB doesn't have data for a particular field, Grimmory automatically tries the next provider in your priority list.
 
 ---
 
@@ -36,7 +36,7 @@ It also returns two provider-specific fields:
 Both fields can be locked in the metadata picker to prevent overwriting during future refreshes.
 
 :::note[Rating Scale]
-RanobeDB uses a 10-point scale. Booklore automatically converts it to 5 points for consistency with other providers (e.g., an 8.0 becomes 4.0).
+RanobeDB uses a 10-point scale. Grimmory automatically converts it to 5 points for consistency with other providers (e.g., an 8.0 becomes 4.0).
 :::
 
 :::note[Authors Only]
@@ -51,9 +51,9 @@ RanobeDB provides author names but does not include illustrators as a separate f
 |---------|---------------|
 | No results returned | Make sure the provider is enabled in Settings > Metadata 2. Verify the book exists on ranobedb.org by searching manually. |
 | Wrong book matched | Use **title + author name** for the most accurate results. English titles work best. |
-| Slow responses | RanobeDB is community-driven, so Booklore rate-limits requests to avoid overloading their servers. Be patient and try again later if you hit delays. |
-| Network errors | Confirm your Booklore instance can reach ranobedb.org (check firewalls, DNS, and proxy settings). |
+| Slow responses | RanobeDB is community-driven, so Grimmory rate-limits requests to avoid overloading their servers. Be patient and try again later if you hit delays. |
+| Network errors | Confirm your Grimmory instance can reach ranobedb.org (check firewalls, DNS, and proxy settings). |
 
 :::note[API Status]
-RanobeDB's API is still under development. Booklore uses the available endpoints, and future updates may enhance functionality as the API matures.
+RanobeDB's API is still under development. Grimmory uses the available endpoints, and future updates may enhance functionality as the API matures.
 :::

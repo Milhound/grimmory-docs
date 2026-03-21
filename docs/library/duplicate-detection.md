@@ -1,6 +1,6 @@
 # 🔍 Duplicate Detection
 
-Booklore can scan a library for duplicate books and merge them together. When duplicates are found, you choose which book to keep as the **target** and the other books' files get attached to it as alternative formats. This is useful when you have the same book in multiple formats (EPUB and PDF, for example) or accidentally imported it twice.
+Grimmory can scan a library for duplicate books and merge them together. When duplicates are found, you choose which book to keep as the **target** and the other books' files get attached to it as alternative formats. This is useful when you have the same book in multiple formats (EPUB and PDF, for example) or accidentally imported it twice.
 
 ---
 
@@ -16,7 +16,7 @@ This opens the **Find Duplicates** dialog, scoped to that library.
 
 ## ⚙️ Detection Modes
 
-Before scanning, choose how aggressively Booklore should look for duplicates. Four presets are available, or you can configure individual signals manually.
+Before scanning, choose how aggressively Grimmory should look for duplicates. Four presets are available, or you can configure individual signals manually.
 
 ![Find Duplicates Dialog](/img/duplicate-detection/find-duplicates-dialog.jpg)
 
@@ -49,9 +49,9 @@ The **Balanced** preset is a good starting point. It catches most real duplicate
 
 ## 🔎 Scanning for Duplicates
 
-Click **Scan** to run the detection. Booklore checks every book in the library against the enabled signals and groups duplicates together.
+Click **Scan** to run the detection. Grimmory checks every book in the library against the enabled signals and groups duplicates together.
 
-Results appear as numbered groups. Each group contains two or more books that Booklore believes are duplicates, along with a colored badge showing why they matched:
+Results appear as numbered groups. Each group contains two or more books that Grimmory believes are duplicates, along with a colored badge showing why they matched:
 
 | Badge | Meaning |
 |-------|---------|
@@ -69,7 +69,7 @@ Each book in a group shows its cover, title, author(s), and format badge (EPUB, 
 
 Every group has one book pre-selected as the **target**, indicated by the **TARGET** label and a highlighted row. The target is the book you want to keep. All other books in the group are "source" books whose files will be attached to the target.
 
-Booklore picks the suggested target automatically based on:
+Grimmory picks the suggested target automatically based on:
 1. Format priority (EPUB is preferred over PDF, etc.)
 2. Number of files (more files = higher priority)
 3. Metadata completeness
@@ -94,7 +94,7 @@ Click **Merge All** at the top right to process every group at once. A progress 
 
 ### Dismissing a Group
 
-Click **Dismiss** on any group to skip it. The group is hidden from the results but no changes are made. This is useful when Booklore flags books that aren't actually duplicates.
+Click **Dismiss** on any group to skip it. The group is hidden from the results but no changes are made. This is useful when Grimmory flags books that aren't actually duplicates.
 
 ---
 
@@ -117,7 +117,7 @@ During a merge, source book files are physically moved to the target book's dire
 
 - Duplicate detection is scoped to a single library. It does not compare books across different libraries.
 - Folder-based audiobooks cannot be merged because their directory structure is integral to playback.
-- File naming follows the library's configured naming pattern. If a filename conflict occurs, Booklore appends a numeric suffix (e.g., `_1`, `_2`).
+- File naming follows the library's configured naming pattern. If a filename conflict occurs, Grimmory appends a numeric suffix (e.g., `_1`, `_2`).
 - File monitoring is temporarily paused during the merge to prevent the scanner from reacting to file moves.
 - Merging is not reversible. If you're unsure about a group, use **Dismiss** to skip it.
 

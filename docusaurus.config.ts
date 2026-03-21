@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Booklore',
+  title: 'Grimmory',
   tagline: 'Organize knowledge. Preserve lore.',
   favicon: 'img/favicon.png',
   
@@ -13,7 +13,7 @@ const config: Config = {
   },
   
   // Set the production url of your site here
-  url: 'https://docs.booklore.org',
+  url: 'https://docs.grimmory.org',
   baseUrl: '/',
   
   trailingSlash: false,
@@ -61,11 +61,7 @@ const config: Config = {
   
   themeConfig: {
     navbar: {
-      title: 'Booklore',
-      logo: {
-        alt: 'Booklore Logo',
-        src: 'img/logo.svg',
-      },
+      title: 'Grimmory',
       items: [
         {
           type: 'docSidebar',
@@ -82,7 +78,7 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: `Copyright © 2025 - ${new Date().getFullYear()} Booklore`,
+      copyright: `Copyright © ${new Date().getFullYear()} Grimmory`,
     },
     prism: {
       theme: prismThemes.github,

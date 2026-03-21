@@ -1,6 +1,6 @@
 # ⚙️ Global Preferences
 
-Configure global settings for your Booklore instance, including cover image handling, search preferences, and file upload limits. These settings apply to all users on the server.
+Configure global settings for your Grimmory instance, including cover image handling, search preferences, and file upload limits. These settings apply to all users on the server.
 
 Navigate to **Settings > Application** to access this page. Requires the **Manage Application Preferences** permission.
 
@@ -10,7 +10,7 @@ Navigate to **Settings > Application** to access this page. Requires the **Manag
 
 ## 🖼️ Book Cover Image
 
-Controls how Booklore generates and processes book cover thumbnails.
+Controls how Grimmory generates and processes book cover thumbnails.
 
 ### Regenerate Covers
 
@@ -33,7 +33,7 @@ Some book files contain covers that are extremely tall (like web comics or manga
 
 **How cropping works:**
 
-1. When a cover is generated, Booklore checks if its aspect ratio exceeds the threshold
+1. When a cover is generated, Grimmory checks if its aspect ratio exceeds the threshold
 2. If vertical cropping is enabled and the image is too tall, it's cropped to a standard portrait ratio
 3. If horizontal cropping is enabled and the image is too wide, it's cropped similarly
 4. With smart cropping on, the algorithm scans from the edges to find where actual content begins (skipping blank or solid-color borders) and crops from there
@@ -62,7 +62,7 @@ If your library contains web comics or manga with very tall cover images, enable
 Enter a new value and click **Save** to update.
 
 :::warning[Server Restart Required]
-Changes to the max file upload size take effect only after restarting the Booklore server.
+Changes to the max file upload size take effect only after restarting the Grimmory server.
 :::
 
 ---

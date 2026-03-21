@@ -10,7 +10,7 @@ Bookdrop may not reliably detect new files on network-mounted storage (e.g., NFS
 **If Bookdrop doesn't react when you add files:**
 - Use a local folder instead
 - Adjust mount options to enable notification support
-- Restart Booklore to trigger a manual rescan
+- Restart Grimmory to trigger a manual rescan
 - Open the Bookdrop UI and click the manual "Refresh" button to force a reload
 - You can also enable periodic scanning for the Bookdrop folder in **Settings → Tasks**.
 :::
@@ -31,7 +31,7 @@ volumes:
 ```
 
 :::warning[Permissions]
-Ensure the Bookdrop folder has proper read/write permissions for the BookLore container.
+Ensure the Bookdrop folder has proper read/write permissions for the Grimmory container.
 :::
 
 Drop supported files (PDF, EPUB, CBZ, CBR, CB7) into this folder. You can drop entire folders of books at once.

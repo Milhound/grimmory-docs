@@ -1,6 +1,6 @@
 # 🔐 Authentication Overview
 
-Booklore supports two authentication methods: **local** (built-in username/password) and **OIDC** (single sign-on with an external identity provider). You can use either one or both at the same time.
+Grimmory supports two authentication methods: **local** (built-in username/password) and **OIDC** (single sign-on with an external identity provider). You can use either one or both at the same time.
 
 ---
 
@@ -16,11 +16,11 @@ Local auth is always available as a fallback, even when OIDC is enabled. Admins 
 
 Sign in with an external identity provider like [Authentik](https://goauthentik.io/), [Keycloak](https://www.keycloak.org/), [Authelia](https://www.authelia.com/), or [Pocket ID](https://pocket-id.org/). Users click one button and authenticate with the same account they use for your other self-hosted apps.
 
-Booklore's OIDC support includes:
+Grimmory's OIDC support includes:
 
 - **Server-side token exchange** with PKCE
 - **Automatic user provisioning** on first login
-- **Group mapping** to sync provider groups to Booklore permissions and library access
+- **Group mapping** to sync provider groups to Grimmory permissions and library access
 - **Back-channel logout** to keep sessions in sync across apps
 - **OIDC-Only Mode** to hide local login and redirect everyone to your provider
 - **Account linking** to migrate existing users without losing their data
@@ -56,7 +56,7 @@ See [OIDC Settings](oidc-settings.md) for every configuration option, claim mapp
 
 **Kill switch:** Set `FORCE_DISABLE_OIDC=true` as an environment variable and restart to disable OIDC entirely, regardless of database settings.
 
-**Loop protection:** If OIDC-Only Mode is on and your provider keeps failing, Booklore stops auto-redirecting after 3 attempts and shows a link to local login.
+**Loop protection:** If OIDC-Only Mode is on and your provider keeps failing, Grimmory stops auto-redirecting after 3 attempts and shows a link to local login.
 
 ---
 
@@ -69,10 +69,10 @@ Local login still works. Use `/login?local=true`.
 No. Enable "Link Existing Local Accounts" and users are linked to their OIDC identity on first SSO login, keeping all their data.
 
 **Are usernames case-sensitive?**
-Yes. The OIDC username must exactly match the Booklore username.
+Yes. The OIDC username must exactly match the Grimmory username.
 
 **Does OIDC support MFA?**
 Yes. Whatever your provider supports works automatically.
 
 **Can different users have different permissions?**
-Yes. Use [Group Mapping](oidc-settings.md#group-mapping) to map provider groups to Booklore permissions and library access.
+Yes. Use [Group Mapping](oidc-settings.md#group-mapping) to map provider groups to Grimmory permissions and library access.

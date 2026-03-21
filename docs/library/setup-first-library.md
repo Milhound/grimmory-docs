@@ -1,6 +1,6 @@
 # 📚 Setup First Library
 
-A library is a collection of book folders that Booklore monitors and indexes. Each library has its own settings for metadata handling, format priority, and file watching.
+A library is a collection of book folders that Grimmory monitors and indexes. Each library has its own settings for metadata handling, format priority, and file watching.
 
 ---
 
@@ -43,7 +43,7 @@ Make sure Docker has read access to the selected paths. If folders aren't showin
 
 **Watch Folders** toggles automatic detection of new, changed, or deleted books. Recommended for active collections.
 
-**Metadata Source** controls where Booklore reads metadata during scans:
+**Metadata Source** controls where Grimmory reads metadata during scans:
 
 | Option | Behavior |
 |--------|----------|
@@ -61,7 +61,7 @@ Make sure Docker has read access to the selected paths. If folders aren't showin
 
 ## ▶️ After Creation
 
-Click **"Create"** to save. Booklore immediately scans the selected folders, extracts metadata, generates cover thumbnails, and indexes everything. Processing runs in the background, so you can navigate freely.
+Click **"Create"** to save. Grimmory immediately scans the selected folders, extracts metadata, generates cover thumbnails, and indexes everything. Processing runs in the background, so you can navigate freely.
 
 ![Library Processing](/img/first-library/library-processing.jpg)
 

@@ -1,6 +1,6 @@
 # Hardcover API Token Setup
 
-[Hardcover](https://hardcover.app) is a book tracking and discovery platform with rich metadata: covers, descriptions, community ratings, review counts, moods, and tags. To use it as a metadata provider in Booklore, you need a free API token from your Hardcover account.
+[Hardcover](https://hardcover.app) is a book tracking and discovery platform with rich metadata: covers, descriptions, community ratings, review counts, moods, and tags. To use it as a metadata provider in Grimmory, you need a free API token from your Hardcover account.
 
 ---
 
@@ -13,19 +13,19 @@
 ![Hardcover API Access page showing the Bearer token](/img/metadata/hardcover-api/hardcover-1.jpg)
 
 :::warning[Copy Only the Token]
-The text box contains `Bearer eyJ...`. When pasting into Booklore, copy only the part **after** `Bearer `. Do not include the word "Bearer" or the space after it.
+The text box contains `Bearer eyJ...`. When pasting into Grimmory, copy only the part **after** `Bearer `. Do not include the word "Bearer" or the space after it.
 :::
 
 ---
 
-## Configure Booklore
+## Configure Grimmory
 
 1. Open **Settings > Metadata 1**
 2. Enable the **Hardcover** checkbox
 3. Paste the token (without the `Bearer ` prefix) into the **API Token** field
 4. Click **Save**
 
-![Booklore Metadata 1 settings with the Hardcover token field](/img/metadata/hardcover-api/hardcover-2.jpg)
+![Grimmory Metadata 1 settings with the Hardcover token field](/img/metadata/hardcover-api/hardcover-2.jpg)
 
 Hardcover is now active as a metadata provider. You can set its priority for individual fields in the Advanced Metadata Fetch dialog.
 

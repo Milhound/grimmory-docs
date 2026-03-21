@@ -16,7 +16,7 @@ const features: FeatureItem[] = [
   {
     icon: '✨',
     title: 'Magic Shelves',
-    description: 'Create dynamic collections that auto-update based on your rules. Let Booklore organize as your library grows.',
+    description: 'Create dynamic collections that auto-update based on your rules. Let Grimmory organize as your library grows.',
   },
   {
     icon: '🧠',
@@ -122,7 +122,7 @@ function HomepageFeatures() {
             transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          <h2 className={styles.featuresTitle}>Why Choose Booklore?</h2>
+          <h2 className={styles.featuresTitle}>Why Choose Grimmory?</h2>
           <p className={styles.featuresSubtitle}>
             Everything you need to build and maintain your personal digital library
           </p>

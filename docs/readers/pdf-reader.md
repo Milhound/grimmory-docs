@@ -1,6 +1,6 @@
 # 📄 PDF Reader
 
-BookLore includes a full PDF reader powered by PDF.js with support for annotations, multiple view modes, search, and reading progress tracking.
+Grimmory includes a full PDF reader powered by PDF.js with support for annotations, multiple view modes, search, and reading progress tracking.
 
 ---
 

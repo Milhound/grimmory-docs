@@ -1,6 +1,6 @@
 # 🏠 Dashboard
 
-The Dashboard is the first page you see after logging in. It shows a personalized overview of your library through scrollable rows of book covers, each row driven by a different data source. Pick up where you left off, see what just arrived, or let BookLore surface something unexpected.
+The Dashboard is the first page you see after logging in. It shows a personalized overview of your library through scrollable rows of book covers, each row driven by a different data source. Pick up where you left off, see what just arrived, or let Grimmory surface something unexpected.
 
 ---
 

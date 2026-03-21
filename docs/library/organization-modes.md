@@ -1,6 +1,6 @@
 # 📂 Organization Modes
 
-When you create a library, you choose an **organization mode** that tells Booklore how to group your files into books. This is a per-library setting and cannot be changed after creation.
+When you create a library, you choose an **organization mode** that tells Grimmory how to group your files into books. This is a per-library setting and cannot be changed after creation.
 
 ---
 
@@ -18,7 +18,7 @@ Library/
     └── Dune.epub            ← book 4
 ```
 
-Even though the three American Gods files share a folder and a name, each one is a separate book entry in Booklore.
+Even though the three American Gods files share a folder and a name, each one is a separate book entry in Grimmory.
 
 ### When to use it
 
@@ -39,7 +39,7 @@ Library/
 
 ### Audiobooks
 
-Chaptered audiobooks (2+ audio files in a folder) are still grouped into a single audiobook. Booklore detects folder-based audiobooks before the organization mode is applied, so this works the same in both modes.
+Chaptered audiobooks (2+ audio files in a folder) are still grouped into a single audiobook. Grimmory detects folder-based audiobooks before the organization mode is applied, so this works the same in both modes.
 
 ```
 Library/
@@ -112,11 +112,11 @@ Library/
         └── 03 - Chapter 3.mp3  ← ┘
 ```
 
-This means you don't need to keep ebooks and chaptered audiobooks in separate folders. Booklore walks up the directory tree looking for a parent folder that contains an ebook and merges them.
+This means you don't need to keep ebooks and chaptered audiobooks in separate folders. Grimmory walks up the directory tree looking for a parent folder that contains an ebook and merges them.
 
 ### Author folders and nesting
 
-Intermediate directories (like author folders) don't interfere. Booklore groups by the **immediate parent folder** of each file.
+Intermediate directories (like author folders) don't interfere. Grimmory groups by the **immediate parent folder** of each file.
 
 ```
 Library/

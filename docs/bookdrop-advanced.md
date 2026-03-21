@@ -1,6 +1,6 @@
 # 🎯 Bookdrop Advanced Features
 
-Bookdrop has 2 more advanced tools to assist with importing large collections into Booklore
+Bookdrop has 2 more advanced tools to assist with importing large collections into Grimmory
 - Bulk Edit
 - Pattern Extraction
 
@@ -81,7 +81,7 @@ Automatically extract metadata from filenames using patterns.
 
 ### Date Formats
 
-While Booklore will attempt to automatically detect the right date format to match what is given, you can explicitly tell it the format to override any auto-detection. This is useful when a date is ambigious.
+While Grimmory will attempt to automatically detect the right date format to match what is given, you can explicitly tell it the format to override any auto-detection. This is useful when a date is ambigious.
 
 The below are some example formats that can be given to a date placeholder:
 
@@ -96,7 +96,7 @@ The below are some example formats that can be given to a date placeholder:
 Tokens: `yyyy`=year, `MM`=month, `dd`=day, `M`=1-2 digit month, `d`=1-2 digit day
 
 :::note
-When using `yyyy` it'll default the day/month to the first of January when adding to the book metadata, as Booklore requires a full date value
+When using `yyyy` it'll default the day/month to the first of January when adding to the book metadata, as Grimmory requires a full date value
 :::
 
 ---

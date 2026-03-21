@@ -1,8 +1,8 @@
 # 🛡️ Authentik
 
-This guide walks you through setting up [Authentik](https://goauthentik.io/) as an OIDC provider for Booklore. By the end, your users will be able to sign in to Booklore with their Authentik account.
+This guide walks you through setting up [Authentik](https://goauthentik.io/) as an OIDC provider for Grimmory. By the end, your users will be able to sign in to Grimmory with their Authentik account.
 
-The setup has two parts: creating an OAuth2 application in Authentik, then entering the credentials in Booklore. The whole process takes about 5 minutes.
+The setup has two parts: creating an OAuth2 application in Authentik, then entering the credentials in Grimmory. The whole process takes about 5 minutes.
 
 :::info[Already have OIDC working?]
 This guide covers the initial setup. For details on user provisioning, group mapping, OIDC-Only Mode, and other advanced features, see the [OIDC Settings](oidc-settings.md) reference.
@@ -22,8 +22,8 @@ Fill in the application details:
 
 ![Application Configuration](/img/authentication/authentik/application-details.jpg)
 
-- **Name:** `Booklore` (this is what users see on the Authentik dashboard)
-- **Slug:** `booklore` (used in URLs, keep it lowercase)
+- **Name:** `Grimmory` (this is what users see on the Authentik dashboard)
+- **Slug:** `grimmory` (used in URLs, keep it lowercase)
 
 Click **Next**.
 
@@ -37,9 +37,9 @@ Choose **OAuth2/OpenID Provider** and click **Next**.
 
 ![Configure Provider](/img/authentication/authentik/provider-settings.jpg)
 
-- **Name:** `Booklore OAuth2`
+- **Name:** `Grimmory OAuth2`
 - **Authorization Flow:** `default-provider-authorization-implicit-consent` (users won't be prompted to approve access each time they log in)
-- **Client Type:** `Public` (Booklore uses PKCE, so a client secret isn't needed)
+- **Client Type:** `Public` (Grimmory uses PKCE, so a client secret isn't needed)
 
 ### Set Up Redirect URIs
 
@@ -47,13 +47,13 @@ This tells Authentik where to send users after they authenticate. The redirect U
 
 ![Redirect URIs](/img/authentication/authentik/redirect-uris.jpg)
 
-Add the following (replace `books.example.com` with your actual Booklore domain):
+Add the following (replace `books.example.com` with your actual Grimmory domain):
 
 - **Strict:** `https://books.example.com/oauth2-callback`
 - **Regex:** `https://books.example.com/*`
 
 :::tip[Where do I find the exact Redirect URI?]
-After you configure the provider in Booklore (Part 2), the OIDC settings page shows a **Provider Configuration Reference** panel with the exact Redirect URI, Post-Logout Redirect URI, and Back-Channel Logout URI. You can come back to Authentik and update these to match exactly.
+After you configure the provider in Grimmory (Part 2), the OIDC settings page shows a **Provider Configuration Reference** panel with the exact Redirect URI, Post-Logout Redirect URI, and Back-Channel Logout URI. You can come back to Authentik and update these to match exactly.
 :::
 
 Set the **Signing Key** to `authentik Self-signed Certificate`.
@@ -70,18 +70,18 @@ Regex: http://localhost:4200/*
 
 Add these scopes (all required):
 
-| Scope | Why Booklore needs it |
+| Scope | Why Grimmory needs it |
 |-------|----------------------|
 | `openid` | Required for OIDC. Provides the user's unique subject identifier. |
 | `profile` | Username and display name. |
 | `email` | Email address for notifications and email-to-device. |
-| `offline_access` | Allows Booklore to issue refresh tokens for extended sessions. |
+| `offline_access` | Allows Grimmory to issue refresh tokens for extended sessions. |
 
 Click **Save**.
 
 ### Bind Users
 
-Control which Authentik users can access Booklore. Users who aren't bound to the application won't see it in their dashboard and can't authenticate.
+Control which Authentik users can access Grimmory. Users who aren't bound to the application won't see it in their dashboard and can't authenticate.
 
 ![Configure Bindings](/img/authentication/authentik/user-bindings.jpg)
 
@@ -90,14 +90,14 @@ Control which Authentik users can access Booklore. Users who aren't bound to the
 - Click **Save Binding**
 
 :::tip[Use groups for easier management]
-Create a group like `booklore-users` in Authentik and bind it to the application. Then just add or remove users from the group instead of editing bindings each time. This also pairs well with Booklore's [Group Mapping](oidc-settings.md#group-mapping) feature.
+Create a group like `grimmory-users` in Authentik and bind it to the application. Then just add or remove users from the group instead of editing bindings each time. This also pairs well with Grimmory's [Group Mapping](oidc-settings.md#group-mapping) feature.
 :::
 
 ---
 
 ## 🔑 Part 2: Get Your Credentials
 
-You need two values from Authentik to configure Booklore: the **Client ID** and the **Issuer URL**.
+You need two values from Authentik to configure Grimmory: the **Client ID** and the **Issuer URL**.
 
 Go to **Applications > Providers** and click on the provider you just created.
 
@@ -110,17 +110,17 @@ Copy these two values:
 | Value | Where to find it | Example |
 |-------|-----------------|---------|
 | **Client ID** | Shown on the provider detail page | `a1b2c3d4e5f6...` (long alphanumeric string) |
-| **Issuer URL** | Listed as "OpenID Configuration Issuer" | `https://auth.example.com/application/o/booklore/` |
+| **Issuer URL** | Listed as "OpenID Configuration Issuer" | `https://auth.example.com/application/o/grimmory/` |
 
 Keep these handy for the next step.
 
 ---
 
-## ⚙️ Part 3: Configure Booklore
+## ⚙️ Part 3: Configure Grimmory
 
-Navigate to **Settings > OIDC** in Booklore.
+Navigate to **Settings > OIDC** in Grimmory.
 
-![Booklore OIDC Settings](/img/authentication/authentik/grimmory-oidc-settings.jpg)
+![Grimmory OIDC Settings](/img/authentication/authentik/grimmory-oidc-settings.jpg)
 
 Fill in the provider configuration:
 
@@ -140,15 +140,15 @@ The default claim mappings work with Authentik out of the box:
 | **Display Name** | `name` |
 | **Groups** | `groups` |
 
-Click **Test Connection** to verify Booklore can reach Authentik's discovery endpoint. All checks should pass.
+Click **Test Connection** to verify Grimmory can reach Authentik's discovery endpoint. All checks should pass.
 
 Click **Save**, then toggle **OIDC Login** to **ON** in the Login Methods section.
 
 ### Optional: Configure Back-Channel Logout
 
-For sessions to stay in sync (so logging out of Authentik also logs the user out of Booklore), configure back-channel logout in Authentik:
+For sessions to stay in sync (so logging out of Authentik also logs the user out of Grimmory), configure back-channel logout in Authentik:
 
-1. In Booklore's OIDC settings, find the **Provider Configuration Reference** panel
+1. In Grimmory's OIDC settings, find the **Provider Configuration Reference** panel
 2. Copy the **Back-Channel Logout URI**
 3. In Authentik, go to your provider settings and paste it into the **Backchannel Logout URL** field
 
@@ -160,27 +160,27 @@ The fastest way to test without logging out of your admin account:
 
 ![User Impersonation](/img/authentication/authentik/user-impersonation.jpg)
 
-1. Go to **Authentik > Directory > Users**, select a user bound to Booklore, and click **Impersonate**
-2. Navigate to your Booklore instance. You should see the Authentik login/dashboard.
+1. Go to **Authentik > Directory > Users**, select a user bound to Grimmory, and click **Impersonate**
+2. Navigate to your Grimmory instance. You should see the Authentik login/dashboard.
 
 ![Authentik Login Page](/img/authentication/authentik/login-page.jpg)
 
-3. Click the **Booklore** tile. You should be redirected and logged in automatically.
+3. Click the **Grimmory** tile. You should be redirected and logged in automatically.
 
-![Booklore Homepage](/img/authentication/authentik/grimmory-homepage.jpg)
+![Grimmory Homepage](/img/authentication/authentik/grimmory-homepage.jpg)
 
 4. Verify the username and email are correct, and that you can access your libraries.
 
-**Alternative:** Open an incognito window, go to Booklore, and click "Sign in with Authentik".
+**Alternative:** Open an incognito window, go to Grimmory, and click "Sign in with Authentik".
 
 ---
 
 ## 🔧 What's Next
 
-Now that basic OIDC is working, you can configure additional features in Booklore's [OIDC Settings](oidc-settings.md):
+Now that basic OIDC is working, you can configure additional features in Grimmory's [OIDC Settings](oidc-settings.md):
 
-- **[User Provisioning](oidc-settings.md#-user-provisioning):** Automatically create Booklore accounts when users sign in for the first time
-- **[Group Mapping](oidc-settings.md#group-mapping):** Map Authentik groups to Booklore permissions and library access (Authentik includes groups in the `groups` claim by default, no extra configuration needed)
+- **[User Provisioning](oidc-settings.md#-user-provisioning):** Automatically create Grimmory accounts when users sign in for the first time
+- **[Group Mapping](oidc-settings.md#group-mapping):** Map Authentik groups to Grimmory permissions and library access (Authentik includes groups in the `groups` claim by default, no extra configuration needed)
 - **[OIDC-Only Mode](oidc-settings.md#-oidc-only-mode):** Hide the local login form and redirect everyone to Authentik
 - **[Account Linking](oidc-settings.md#link-existing-local-accounts):** Migrate existing local users to OIDC without losing their data
 
@@ -190,13 +190,13 @@ Now that basic OIDC is working, you can configure additional features in Booklor
 
 ### Login Redirects But Fails
 
-- The **Redirect URI** in Authentik must match exactly. Copy it from Booklore's Provider Configuration Reference panel.
+- The **Redirect URI** in Authentik must match exactly. Copy it from Grimmory's Provider Configuration Reference panel.
 - Check that all four scopes (`openid`, `profile`, `email`, `offline_access`) are assigned to the provider.
 - Verify the Client ID has no extra spaces.
 
 ### "User Not Provisioned" Error
 
-Auto-provisioning is off by default. Either enable it in [OIDC Settings](oidc-settings.md#-user-provisioning), or create a Booklore user with a username that exactly matches the Authentik `preferred_username` (case-sensitive).
+Auto-provisioning is off by default. Either enable it in [OIDC Settings](oidc-settings.md#-user-provisioning), or create a Grimmory user with a username that exactly matches the Authentik `preferred_username` (case-sensitive).
 
 ### "Invalid Client" Error
 
@@ -206,15 +206,15 @@ Auto-provisioning is off by default. Either enable it in [OIDC Settings](oidc-se
 ### User Logged In But Wrong Permissions
 
 If you're using group mapping, check that:
-- The group names in Authentik match the **Group Claim** values in your Booklore mappings (case-sensitive)
+- The group names in Authentik match the **Group Claim** values in your Grimmory mappings (case-sensitive)
 - **Group Sync Mode** is set to something other than Disabled
 
 ### Back-Channel Logout Not Working
 
-- The Back-Channel Logout URI must be reachable from Authentik's server. If both run on the same Docker network, use the internal hostname (e.g., `http://booklore:8080/api/v1/auth/oidc/backchannel-logout`).
+- The Back-Channel Logout URI must be reachable from Authentik's server. If both run on the same Docker network, use the internal hostname (e.g., `http://grimmory:8080/api/v1/auth/oidc/backchannel-logout`).
 - Not all Authentik versions support back-channel logout. Check your Authentik version.
 
-### Can't Access Booklore At All
+### Can't Access Grimmory At All
 
 - Admin backdoor: `/login?local=true`
 - Nuclear option: set `FORCE_DISABLE_OIDC=true` as an environment variable and restart
@@ -224,4 +224,4 @@ If you're using group mapping, check that:
 ## 📚 Additional Resources
 
 - [Authentik Documentation](https://goauthentik.io/docs/)
-- [Booklore OIDC Settings Reference](oidc-settings.md)
+- [Grimmory OIDC Settings Reference](oidc-settings.md)

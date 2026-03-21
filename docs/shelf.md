@@ -2,7 +2,7 @@
 
 Shelves let you organize books across libraries by theme, purpose, or preference. A book can belong to multiple shelves, and shelves can contain books from different libraries.
 
-Booklore comes with a built-in **Favorites** shelf and an **Unshelved** section that automatically lists books not assigned to any shelf.
+Grimmory comes with a built-in **Favorites** shelf and an **Unshelved** section that automatically lists books not assigned to any shelf.
 
 ---
 

@@ -1,16 +1,16 @@
 # OPDS
 
-OPDS (Open Publication Distribution System) lets you browse and download books from your Booklore library using any OPDS-compatible reading app. Point your app at Booklore's catalog URL, authenticate, and your full library is available on any device: e-readers, tablets, phones.
+OPDS (Open Publication Distribution System) lets you browse and download books from your Grimmory library using any OPDS-compatible reading app. Point your app at Grimmory's catalog URL, authenticate, and your full library is available on any device: e-readers, tablets, phones.
 
-Booklore also provides a **Komga-compatible API** for apps that speak the Komga protocol (Tachiyomi, Komelia, etc.), which is especially useful for comic/manga readers that support per-page streaming of CBX files. Both APIs share the same user accounts and respect library access permissions.
+Grimmory also provides a **Komga-compatible API** for apps that speak the Komga protocol (Tachiyomi, Komelia, etc.), which is especially useful for comic/manga readers that support per-page streaming of CBX files. Both APIs share the same user accounts and respect library access permissions.
 
 ---
 
 ## Server Control
 
-Go to **Settings > OPDS** in Booklore. The top section has two toggles:
+Go to **Settings > OPDS** in Grimmory. The top section has two toggles:
 
-![Booklore OPDS Configuration page showing server toggles, endpoint URLs, and OPDS user management](/img/opds/opds.jpg)
+![Grimmory OPDS Configuration page showing server toggles, endpoint URLs, and OPDS user management](/img/opds/opds.jpg)
 
 **OPDS Server Enabled** activates the standard OPDS catalog at `/api/v1/opds`. This is what most reading apps connect to.
 
@@ -24,7 +24,7 @@ When the Komga API is enabled, an additional toggle appears:
 
 ## Endpoints
 
-Once enabled, the endpoint URLs appear in the **Endpoints** section with copy buttons. The URLs are auto-generated based on your Booklore instance.
+Once enabled, the endpoint URLs appear in the **Endpoints** section with copy buttons. The URLs are auto-generated based on your Grimmory instance.
 
 | Endpoint | URL Pattern | Used by |
 |----------|-------------|---------|
@@ -39,7 +39,7 @@ Replace `localhost` with your server's IP address or domain name when connecting
 
 ## OPDS Users
 
-OPDS uses its own user accounts, separate from your Booklore login. Both the OPDS catalog and Komga API authenticate with these same credentials using HTTP Basic Auth.
+OPDS uses its own user accounts, separate from your Grimmory login. Both the OPDS catalog and Komga API authenticate with these same credentials using HTTP Basic Auth.
 
 To create a user:
 
@@ -47,7 +47,7 @@ To create a user:
 2. Enter a username, password, and default sort order
 3. Click **Create**
 
-Each OPDS user is linked to the Booklore user who created it, which determines library access: the OPDS user can only see libraries that the parent Booklore user has access to. Admins can see everything.
+Each OPDS user is linked to the Grimmory user who created it, which determines library access: the OPDS user can only see libraries that the parent Grimmory user has access to. Admins can see everything.
 
 ### Sort Order
 
@@ -153,8 +153,8 @@ Authentication is the same: HTTP Basic Auth with your OPDS user credentials.
 | Problem | What to check |
 |---------|---------------|
 | App can't connect | Verify the OPDS server is enabled, the URL is correct, and the OPDS credentials are right. If connecting from another device, make sure `localhost` is replaced with the server's IP or hostname. |
-| Books not appearing | The OPDS user inherits library access from the parent Booklore user. If the Booklore user doesn't have access to a library, books from that library won't appear in OPDS. |
-| Authentication errors | OPDS users are separate from Booklore accounts. Double-check the OPDS username and password. Passwords can't be retrieved after creation. |
+| Books not appearing | The OPDS user inherits library access from the parent Grimmory user. If the Grimmory user doesn't have access to a library, books from that library won't appear in OPDS. |
+| Authentication errors | OPDS users are separate from Grimmory accounts. Double-check the OPDS username and password. Passwords can't be retrieved after creation. |
 | Komga client shows no series | Make sure the Komga API toggle is enabled in OPDS settings. Try toggling **Group Unknown Series** if standalone books aren't showing up. |
 | CBX pages not loading | Per-page streaming only works through the Komga API (`/komga/api/`), not the standard OPDS endpoint. Make sure your client is pointed at the Komga URL. |
 | Search returns nothing | OPDS search queries against title, author, description, publisher, ISBN, series, language, and categories. Make sure the search terms match content in those fields. |

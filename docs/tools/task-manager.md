@@ -10,11 +10,11 @@ Navigate to **Settings > Tasks** to access this page. Requires the **Access Task
 
 ## 📋 System Tasks
 
-Booklore provides six system tasks. Each can be run manually or on a schedule.
+Grimmory provides six system tasks. Each can be run manually or on a schedule.
 
 ### 1. 🔄 Refresh Metadata
 
-Re-reads book information (title, author, cover, etc.) from your files and updates the Booklore database.
+Re-reads book information (title, author, cover, etc.) from your files and updates the Grimmory database.
 
 This task has a **Metadata Replace Mode** option:
 
@@ -28,7 +28,7 @@ This task has a **Metadata Replace Mode** option:
 :::
 
 **When to use:**
-- After editing book files outside Booklore
+- After editing book files outside Grimmory
 - After bulk imports where embedded metadata needs to be read
 - To recover metadata from book files after a database issue
 
@@ -51,7 +51,7 @@ Scans the Bookdrop ingest folder for newly added files and queues them for Bookd
 
 **When to use:**
 - When Bookdrop file monitoring isn't detecting new uploads
-- To process files dropped into the ingest folder while Booklore was offline
+- To process files dropped into the ingest folder while Grimmory was offline
 - As a scheduled fallback alongside real-time Bookdrop monitoring
 
 ---
@@ -118,7 +118,7 @@ Every task supports cron-based scheduling. Each task card shows its schedule on 
 - **Enable/disable toggle** to activate or deactivate the schedule
 - **Edit button** (pencil icon) to modify the expression
 
-Click the edit button to enter a new cron expression. Booklore uses **Spring cron format** with 6 fields:
+Click the edit button to enter a new cron expression. Grimmory uses **Spring cron format** with 6 fields:
 
 ```
 ┌───────────── second (0-59)

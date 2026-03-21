@@ -1,6 +1,6 @@
 # 🔃 Library Metadata Configuration
 
-Configure how Booklore fetches and applies book metadata from online providers. Set global defaults with per-field provider priorities, enable or disable specific fields, and create library-specific overrides for different collections.
+Configure how Grimmory fetches and applies book metadata from online providers. Set global defaults with per-field provider priorities, enable or disable specific fields, and create library-specific overrides for different collections.
 
 Navigate to **Settings > Metadata 2** to access this page. Requires the **Manage Metadata Configuration** permission.
 
@@ -10,9 +10,9 @@ Navigate to **Settings > Metadata 2** to access this page. Requires the **Manage
 
 ## 🧩 How It Works
 
-When Booklore fetches metadata for a book, it checks your configuration to determine which providers to query and in what order. For each metadata field (title, author, description, etc.), you assign up to four providers in priority order:
+When Grimmory fetches metadata for a book, it checks your configuration to determine which providers to query and in what order. For each metadata field (title, author, description, etc.), you assign up to four providers in priority order:
 
-1. **1st Priority (P1)**: The provider Booklore tries first
+1. **1st Priority (P1)**: The provider Grimmory tries first
 2. **2nd Priority (P2)**: Used if P1 doesn't have data for that field
 3. **3rd Priority (P3)**: Used if P2 also lacks data
 4. **4th Priority (P4)**: Final fallback
@@ -20,14 +20,14 @@ When Booklore fetches metadata for a book, it checks your configuration to deter
 This means different fields can pull from different providers. For example, you might prefer GoodReads for descriptions but Amazon for cover images.
 
 :::tip[Smart Fallback]
-If your first-choice provider doesn't have data for a field, Booklore automatically tries the next priority until it finds data or exhausts all four. Leave a priority as "Unset" to skip it.
+If your first-choice provider doesn't have data for a field, Grimmory automatically tries the next priority until it finds data or exhausts all four. Leave a priority as "Unset" to skip it.
 :::
 
 ---
 
 ## 📊 Metadata Providers
 
-Booklore integrates with the following providers:
+Grimmory integrates with the following providers:
 
 | Provider | Strengths |
 |----------|-----------|
@@ -186,7 +186,7 @@ Each library panel includes **Export Sidecar** and **Import Sidecar** buttons fo
 Writes the current metadata for every book in the library to `.sidecar.json` files alongside the book files on disk. This is useful for:
 
 - Backing up metadata before a major change
-- Sharing metadata between Booklore instances
+- Sharing metadata between Grimmory instances
 - Preserving metadata independently from the database
 
 ### Import Sidecar

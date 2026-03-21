@@ -145,7 +145,7 @@ const sidebars: SidebarsConfig = {
   testingSidebar: [
     {
       type: 'category',
-      label: 'Booklore Beta Testing',
+      label: 'Grimmory Beta Testing',
       collapsible: true,
       collapsed: false,
       items: [

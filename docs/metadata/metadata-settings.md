@@ -22,7 +22,7 @@ Writing metadata is **not supported** for FB2, AZW3, and MOBI formats. Books in 
 
 ### Write Metadata to EPUB
 
-When enabled, Booklore writes metadata directly into EPUB files whenever you edit book information. All standard metadata fields are supported, including title, authors, description, publisher, series, ISBN, language, genres, and cover image.
+When enabled, Grimmory writes metadata directly into EPUB files whenever you edit book information. All standard metadata fields are supported, including title, authors, description, publisher, series, ISBN, language, genres, and cover image.
 
 ### Write Metadata to CBX
 
@@ -38,7 +38,7 @@ When enabled, writes metadata directly into audiobook files (M4B, M4A, MP3, etc.
 
 ### Auto-Move Files on Metadata Update
 
-When enabled, Booklore automatically moves and renames files according to their library's [file naming pattern](file-naming-patterns.md) whenever metadata is updated. For example, if your naming pattern includes the author and title, renaming a book or correcting an author will cause the file to be relocated to match the new metadata.
+When enabled, Grimmory automatically moves and renames files according to their library's [file naming pattern](file-naming-patterns.md) whenever metadata is updated. For example, if your naming pattern includes the author and title, renaming a book or correcting an author will cause the file to be relocated to match the new metadata.
 
 :::tip[Best Practice]
 Enable this alongside a well-defined file naming pattern to keep your library organized automatically. Changes to author names, titles, or series information will keep your folder structure in sync.
@@ -52,7 +52,7 @@ Create external metadata files alongside your books for portable metadata storag
 
 ![Sidecar JSON Files](/img/metadata/sidecar-json.jpg)
 
-When enabled, Booklore writes a `BookName.metadata.json` file next to each book file containing all of its metadata in a structured JSON format. This provides a portable, human-readable backup of your metadata that lives alongside the book files themselves.
+When enabled, Grimmory writes a `BookName.metadata.json` file next to each book file containing all of its metadata in a structured JSON format. This provides a portable, human-readable backup of your metadata that lives alongside the book files themselves.
 
 ### What's Included in Sidecar Files
 
@@ -76,7 +76,7 @@ Configure whether metadata is automatically fetched from your configured provide
 
 ![Automatic Metadata Download](/img/metadata/auto-metadata-download.jpg)
 
-When enabled, Booklore will automatically retrieve metadata from your configured sources whenever new files are added to the Bookdrop folder. The metadata fetch uses the provider priority configuration set in the [Fetch Configuration](metadata-fetch-configuration.md) page.
+When enabled, Grimmory will automatically retrieve metadata from your configured sources whenever new files are added to the Bookdrop folder. The metadata fetch uses the provider priority configuration set in the [Fetch Configuration](metadata-fetch-configuration.md) page.
 
 :::warning[Performance Note]
 Processing a large number of files simultaneously may increase the time required for metadata fetching. If you regularly drop many files at once, consider leaving this disabled and running metadata fetches manually or on a schedule.
@@ -148,7 +148,7 @@ If you only use a few providers, disable the fields for providers you don't use.
 
 ## ⭐ Public Reviews
 
-Configure automatic downloading of user reviews from external platforms. Reviews can be fetched from Amazon, Goodreads, and Hardcover for offline access within Booklore.
+Configure automatic downloading of user reviews from external platforms. Reviews can be fetched from Amazon, Goodreads, and Hardcover for offline access within Grimmory.
 
 ![Public Reviews](/img/metadata/public-reviews.jpg)
 
@@ -158,7 +158,7 @@ The master toggle that enables or disables review downloading across all provide
 
 ### Auto Download on Book Open
 
-When enabled, Booklore automatically fetches reviews from your configured sources whenever you open a book's details page. When disabled, reviews are only downloaded manually or during a metadata refresh operation.
+When enabled, Grimmory automatically fetches reviews from your configured sources whenever you open a book's details page. When disabled, reviews are only downloaded manually or during a metadata refresh operation.
 
 ### Review Sources
 
@@ -182,7 +182,7 @@ Click **Save Configurations** at the bottom of the page to persist all changes a
 
 - All configuration changes are recorded in the [Audit Log](../tools/audit-logs.md).
 - Provider settings on this page (Metadata 1) control **which providers are available**. The [Fetch Configuration](metadata-fetch-configuration.md) page (Metadata 2) controls **which providers are used for each field** and in what priority order.
-- Sidecar JSON files use version "1.0" format and are generated by Booklore. They can be read back during sidecar import operations.
+- Sidecar JSON files use version "1.0" format and are generated by Grimmory. They can be read back during sidecar import operations.
 - Metadata persistence and auto-move features require the files to be on a local file system. Network storage is not supported.
 - Enabling a provider here does not automatically assign it to any metadata fields. You must configure provider priorities on the Fetch Configuration page separately.
 - The Manage Metadata Configuration permission is required to access and modify all settings on this page.
