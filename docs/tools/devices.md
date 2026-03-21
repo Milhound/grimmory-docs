@@ -25,7 +25,7 @@ Requires the **KOReader Sync** permission.
 
 | Field | Description |
 |-------|-------------|
-| **KOReader API Path** | The API endpoint to configure on your KOReader device. Auto-generated from your Booklore URL (e.g., `https://demo.booklore.org/api/koreader`). Read-only with a copy button. |
+| **KOReader API Path** | The API endpoint to configure on your KOReader device. Auto-generated from your Booklore URL (e.g., `http://your-booklore-domain/api/koreader`). Read-only with a copy button. |
 | **KOReader Username** | Your username for authenticating with the sync service. |
 | **KOReader Password** | Your password (minimum 6 characters). |
 

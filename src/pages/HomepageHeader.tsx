@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const [showDemoDialog, setShowDemoDialog] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -40,16 +39,6 @@ function HomepageHeader() {
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </Link>
-              <button
-                className={`button button--lg ${styles.demoButton}`}
-                onClick={() => setShowDemoDialog(true)}>
-                <span className={styles.demoButtonIcon}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="5 3 19 12 5 21 5 3"/>
-                  </svg>
-                </span>
-                <span>Try Live Demo</span>
-              </button>
             </div>
             <div className={styles.linksRow}>
               <a
@@ -96,65 +85,6 @@ function HomepageHeader() {
           </div>
         </div>
       </header>
-
-      {showDemoDialog && (
-        <div className={styles.modalOverlay} onClick={() => setShowDemoDialog(false)}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.modalClose} onClick={() => setShowDemoDialog(false)}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6L6 18M6 6l12 12"/>
-              </svg>
-            </button>
-
-            <div className={styles.modalHeader}>
-              <div className={styles.modalIcon}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/>
-                </svg>
-              </div>
-              <div>
-                <h2 className={styles.modalTitle}>Try Live Demo</h2>
-                <p className={styles.modalSubtitle}>Experience Booklore before installing</p>
-              </div>
-            </div>
-
-            <div className={styles.demoCredentials}>
-              <div className={styles.credentialRow}>
-                <span className={styles.credentialLabel}>URL</span>
-                <a href="https://demo.booklore.org" target="_blank" rel="noopener noreferrer" className={styles.credentialLink}>
-                  demo.booklore.org
-                </a>
-              </div>
-              <div className={styles.credentialRow}>
-                <span className={styles.credentialLabel}>Username</span>
-                <code className={styles.credentialCode}>booklore</code>
-              </div>
-              <div className={styles.credentialRow}>
-                <span className={styles.credentialLabel}>Password</span>
-                <code className={styles.credentialCode}>9HC20PGGfitvWaZ1</code>
-              </div>
-            </div>
-
-            <div className={styles.modalNote}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-              </svg>
-              <span>Demo has standard user permissions. Admin features require self-hosting.</span>
-            </div>
-
-            <a
-              href="https://demo.booklore.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.launchButton}>
-              Launch Demo
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M7 17L17 7M17 7H7M17 7v10"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      )}
     </>
   );
 }

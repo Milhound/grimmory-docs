@@ -60,7 +60,7 @@ Copy it. You'll also need your **Issuer URL**, which is simply your Pocket ID ba
 
 Navigate to **Settings > OIDC** in Booklore.
 
-![Booklore OIDC Settings](/img/authentication/pocket-id/booklore-oidc-settings.jpg)
+![Booklore OIDC Settings](/img/authentication/pocket-id/grimmory-oidc-settings.jpg)
 
 Fill in the provider configuration:
 
