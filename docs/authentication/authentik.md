@@ -23,7 +23,7 @@ Fill in the application details:
 ![Application Configuration](/img/authentication/authentik/application-details.jpg)
 
 - **Name:** `Grimmory` (this is what users see on the Authentik dashboard)
-- **Slug:** `booklore` (used in URLs, keep it lowercase)
+- **Slug:** `grimmory` (used in URLs, keep it lowercase)
 
 Click **Next**.
 
@@ -90,7 +90,7 @@ Control which Authentik users can access Grimmory. Users who aren't bound to the
 - Click **Save Binding**
 
 :::tip[Use groups for easier management]
-Create a group like `booklore-users` in Authentik and bind it to the application. Then just add or remove users from the group instead of editing bindings each time. This also pairs well with Grimmory's [Group Mapping](oidc-settings.md#group-mapping) feature.
+Create a group like `grimmory-users` in Authentik and bind it to the application. Then just add or remove users from the group instead of editing bindings each time. This also pairs well with Grimmory's [Group Mapping](oidc-settings.md#group-mapping) feature.
 :::
 
 ---
@@ -110,7 +110,7 @@ Copy these two values:
 | Value | Where to find it | Example |
 |-------|-----------------|---------|
 | **Client ID** | Shown on the provider detail page | `a1b2c3d4e5f6...` (long alphanumeric string) |
-| **Issuer URL** | Listed as "OpenID Configuration Issuer" | `https://auth.example.com/application/o/booklore/` |
+| **Issuer URL** | Listed as "OpenID Configuration Issuer" | `https://auth.example.com/application/o/grimmory/` |
 
 Keep these handy for the next step.
 
@@ -211,7 +211,7 @@ If you're using group mapping, check that:
 
 ### Back-Channel Logout Not Working
 
-- The Back-Channel Logout URI must be reachable from Authentik's server. If both run on the same Docker network, use the internal hostname (e.g., `http://booklore:8080/api/v1/auth/oidc/backchannel-logout`).
+- The Back-Channel Logout URI must be reachable from Authentik's server. If both run on the same Docker network, use the internal hostname (e.g., `http://grimmory:8080/api/v1/auth/oidc/backchannel-logout`).
 - Not all Authentik versions support back-channel logout. Check your Authentik version.
 
 ### Can't Access Grimmory At All

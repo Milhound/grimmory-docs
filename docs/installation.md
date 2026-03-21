@@ -125,7 +125,7 @@ services:
 - **Image registry:** Alternatively use `ghcr.io/booklore-app/booklore:latest` from GitHub Container Registry.
 
 :::tip[Version Pinning]
-For production, pin to specific versions (e.g., `grimmory/grimmory:v1.2.3`). Check [releases](https://github.com/booklore-app/booklore/releases).
+For production, pin to specific versions (e.g., `grimmory/grimmory:v1.2.3`). Check [releases](https://github.com/grimmory-tools/grimmory/releases).
 :::
 
 ---
@@ -157,7 +157,7 @@ Or from another device on your network: `http://YOUR_SERVER_IP:6060`
 ### Container Won't Start
 
 ```bash
-docker compose logs booklore
+docker compose logs grimmory
 docker compose logs mariadb
 ```
 
@@ -170,7 +170,7 @@ Verify MariaDB is healthy with `docker compose ps mariadb`. Ensure `DATABASE_PAS
 **Reset database (last resort):**
 ```bash
 docker compose down
-rm -rf ~/booklore/mariadb/config/*
+rm -rf ~/grimmory/mariadb/config/*
 docker compose up -d
 ```
 
@@ -182,7 +182,7 @@ This deletes all library metadata. Books remain but need re-importing.
 
 Find your user/group IDs with `id -u` and `id -g`, update `.env` accordingly, then fix directory ownership:
 ```bash
-sudo chown -R $USER:$USER ~/booklore
+sudo chown -R $USER:$USER ~/grimmory
 ```
 
 ### Port Already in Use

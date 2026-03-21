@@ -14,7 +14,7 @@ This guide covers the initial setup. For details on user provisioning, group map
 
 Authelia's OIDC configuration lives in its YAML config file. Add a client entry for Grimmory under `identity_providers.oidc.clients`.
 
-Here's a complete working configuration. Replace `booklore.example.com` with your actual Grimmory domain and `auth.example.com` with your Authelia domain:
+Here's a complete working configuration. Replace `grimmory.example.com` with your actual Grimmory domain and `auth.example.com` with your Authelia domain:
 
 ```yaml
 identity_providers:
@@ -33,7 +33,7 @@ identity_providers:
           - groups
           - offline_access
         redirect_uris:
-          - https://booklore.example.com/oauth2-callback
+          - https://your-grimmory-domain.com/oauth2-callback
 ```
 
 ### What Each Section Does
@@ -121,7 +121,7 @@ Now that basic OIDC is working, you can configure additional features in Grimmor
 
 ### Login Redirects But Fails
 
-- The **redirect URI** in Authelia's config must match exactly: `https://booklore.example.com/oauth2-callback`
+- The **redirect URI** in Authelia's config must match exactly: `https://your-grimmory-domain.com/oauth2-callback`
 - Check Authelia's logs for a detailed error message.
 
 ### "User Not Provisioned" Error

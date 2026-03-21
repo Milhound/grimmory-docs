@@ -125,7 +125,7 @@ These values are auto-generated based on your Grimmory instance URL. You don't n
 :::info[What is Back-Channel Logout?]
 When a user logs out from your identity provider (for example, clicking "Log out" in Authentik), back-channel logout tells Grimmory to immediately end that user's session. Without it, the user would stay logged in to Grimmory until their token expires, even though they've already logged out everywhere else.
 
-This is a server-to-server call, so the Back-Channel Logout URI must be reachable from your provider's server, not just from the user's browser. If your provider and Grimmory run on the same Docker network, use the internal hostname (e.g., `http://booklore:8080/api/v1/auth/oidc/backchannel-logout`).
+This is a server-to-server call, so the Back-Channel Logout URI must be reachable from your provider's server, not just from the user's browser. If your provider and Grimmory run on the same Docker network, use the internal hostname (e.g., `http://grimmory:8080/api/v1/auth/oidc/backchannel-logout`).
 :::
 
 ---
@@ -161,7 +161,7 @@ https://books.example.com/login?local=true
 
 ```yaml
 services:
-  booklore:
+  grimmory:
     environment:
       - FORCE_DISABLE_OIDC=true
 ```
@@ -491,7 +491,7 @@ The entire token exchange happens on the server. The browser never sees the OIDC
 - **Redirect URI mismatch:** The redirect URI configured in your provider must exactly match what Grimmory generates. Copy it from the Provider Configuration Reference panel. Common mistakes: missing `/oauth2-callback` path, wrong port, `http` vs `https`.
 - **Scopes not allowed:** Make sure `openid`, `profile`, `email`, and `offline_access` are all enabled in your provider's client configuration.
 - **Wrong Client ID or Secret:** Double-check these values. A single extra space can cause a failure.
-- Check Grimmory application logs (`docker logs booklore`) for a specific error message.
+- Check Grimmory application logs (`docker logs grimmory`) for a specific error message.
 
 ### User Logs In But Gets "User Not Provisioned"
 
@@ -504,7 +504,7 @@ This means auto-provisioning is disabled and no Grimmory account matches the OID
 1. **Is the Groups Claim configured?** Check the Claim Mappings section. The default is `groups`.
 2. **Does your provider actually send groups?** Not all providers do by default. See the [provider-specific instructions](#setting-up-groups-in-your-provider) above.
 3. **Is Group Sync Mode enabled?** It defaults to Disabled. Set it to **On Login (Replace)** or **On Login (Additive)**.
-4. **Do group names match exactly?** Group claim values are case-sensitive. `Grimmory-Admins` is not the same as `booklore-admins`. Check what your provider actually sends by inspecting the token (most providers have a token preview feature).
+4. **Do group names match exactly?** Group claim values are case-sensitive. `Grimmory-Admins` is not the same as `grimmory-admins`. Check what your provider actually sends by inspecting the token (most providers have a token preview feature).
 
 ### Sessions Not Syncing (User Stays Logged In After Provider Logout)
 

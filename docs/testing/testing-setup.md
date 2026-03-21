@@ -31,11 +31,11 @@ Open the `docker-compose.yml` file in your sandbox folder using a text editor (N
 
 #### **A. Point to the Latest Pre-release Image:**
 
-Find the line starting with `image:` and update it with the latest `develop-` tag provided by the team at https://github.com/grimmory-tools/grimmory/pkgs/container/grimmory/
+Find the line starting with `image:` and update it with the latest `nightly-` tag provided by the team at https://github.com/grimmory-tools/grimmory/pkgs/container/grimmory/
 
 ```yaml
-booklore:
-  image: booklore/booklore:develop-2f6e8570
+grimmory:
+  image: grimmory/grimmory:nightly-20260321-55c0ac0
 ```
 
 #### **B. Avoid Container Conflicts:**
@@ -43,8 +43,8 @@ booklore:
 To prevent your computer from getting confused between your "real" Grimmory and this "test" version, you must give the `container_name` a unique name.
 
 ```yaml
-booklore:
-  container_name: booklore-test
+grimmory:
+  container_name: grimmory-test
 
 mariadb:
   container_name: mariadb-test
@@ -70,7 +70,7 @@ Open your terminal or command prompt inside your sandbox folder and run:
 
 If the app doesn't start or crashes, the logs will tell us why. Run these in your terminal:
 
-- **Grimmory Logs:** `docker compose logs booklore`
+- **Grimmory Logs:** `docker compose logs grimmory`
 - **Database Logs:** `docker compose logs mariadb`
 
 ### Resetting the Test Database
