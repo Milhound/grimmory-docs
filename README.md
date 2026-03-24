@@ -1,41 +1,31 @@
-# Website
+# Grimmory Docs
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Docusaurus docs site for Grimmory.
 
-## Installation
-
-```bash
-yarn
-```
-
-## Local Development
+## Local
 
 ```bash
-yarn start
+npm ci
+npm start
 ```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Deploy
 
-## Deployment
+GitHub Pages deploys from [deploy.yml](.github/workflows/deploy.yml) on push to `master`.
 
-Using SSH:
+Required one-time setup:
 
-```bash
-USE_SSH=true yarn deploy
-```
+1. GitHub repo: `Settings -> Pages -> Source: GitHub Actions`
+2. DNS: `CNAME docs -> <org-or-user>.github.io`
+3. Keep [CNAME](static/CNAME) set to `docs.grimmory.org`
+4. Enable `Enforce HTTPS` after certificate is issued
 
-Not using SSH:
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- `url: https://docs.grimmory.org`
+- `baseUrl: /`
