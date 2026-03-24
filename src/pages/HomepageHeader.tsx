@@ -20,15 +20,18 @@ function HomepageHeader() {
         </div>
         <div className="container">
           <div className={`${styles.heroContent} ${isVisible ? styles.heroVisible : ''}`}>
+            <div className={styles.statusNotice} role="status" aria-live="polite">
+              <strong>Project Status:</strong> Booklore was an AGPLv3 open source project, and the original maintainer chose to shut it down. Grimmory is a community fork run by former contributors and is currently a work in progress as setup continues.
+            </div>
             <span className={styles.badge}>
               <span className={styles.badgePulse}></span>
-              Your Personal Knowledge Base
+              Your Self-Hosted Library
             </span>
             <h1 className={styles.heroTitle}>
               Welcome to <span className={styles.gradient}>Grimmory</span>
             </h1>
             <p className={styles.heroTagline}>
-              A modern way to organize, read, and own your digital library.
+              A modern way to organize, access, and self-host your digital library.
             </p>
             <div className={styles.buttons}>
               <Link
@@ -62,7 +65,7 @@ function HomepageHeader() {
                 <span>Self-Hosted</span>
               </a>
               <a
-                href="https://discord.gg/9YJ7HB4n8T"
+                href="https://discord.gg/vNsB8CTebs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkItem}>

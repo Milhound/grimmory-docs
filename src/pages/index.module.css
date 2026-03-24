@@ -158,6 +158,23 @@
     transform: translateY(0);
 }
 
+.statusNotice {
+    max-width: 900px;
+    margin: 0 auto 1.75rem;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    color: #422006;
+    border: 1px solid rgba(245, 158, 11, 0.9);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(254, 215, 170, 0.98), rgba(253, 186, 116, 0.98));
+    box-shadow: 0 10px 28px rgba(194, 65, 12, 0.28);
+    line-height: 1.45;
+}
+
+.statusNotice strong {
+    margin-right: 0.35rem;
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -397,6 +414,67 @@
 .linkItem:nth-child(5) {
     --link-color: rgba(238, 61, 92, 0.25);
     --link-glow: rgba(238, 61, 92, 0.4);
+}
+
+.aboutSection {
+    padding: 3rem 12rem;
+    background: var(--ifm-background-color);
+}
+
+.aboutHeader {
+    text-align: center;
+}
+
+.aboutTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 1.5rem;
+    color: var(--ifm-heading-color);
+    letter-spacing: -0.02em;
+}
+
+.sectionDivider {
+    height: 1px;
+    margin: 0 auto;
+    width: min(100% - 2rem, 1080px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(148, 163, 184, 0.5), rgba(255, 255, 255, 0));
+}
+
+.cardGrid {
+    display: grid;
+    gap: 1rem;
+}
+
+.cardGridAbout {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.infoCard {
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: var(--ifm-card-background-color);
+    border: 1px solid var(--ifm-color-emphasis-200);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infoCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.infoTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: var(--ifm-heading-color);
+}
+
+.infoDescription {
+    margin: 0;
+    font-size: 0.925rem;
+    line-height: 1.55;
+    color: var(--ifm-color-emphasis-700);
 }
 
 .githubIcon {
@@ -829,6 +907,18 @@
 
     .features {
         padding: 2.5rem 1.5rem;
+    }
+
+    .aboutSection {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .aboutTitle {
+        font-size: 1.75rem;
+    }
+
+    .cardGridAbout {
+        grid-template-columns: 1fr;
     }
 
     .featuresTitle {

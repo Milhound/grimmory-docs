@@ -23,9 +23,9 @@ Required one-time setup:
 
 1. GitHub repo: `Settings -> Pages -> Source: GitHub Actions`
 2. DNS: `CNAME docs -> <org-or-user>.github.io`
-3. Keep [CNAME](static/CNAME) set to `docs.grimmory.org`
+3. Keep [CNAME](static/CNAME) set to `grimmory.org`
 4. Enable `Enforce HTTPS` after certificate is issued
 
 
-- `url: https://docs.grimmory.org`
+- `url: https://grimmory.org`
 - `baseUrl: /`

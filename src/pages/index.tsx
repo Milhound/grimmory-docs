@@ -1,10 +1,11 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import React, {JSX} from 'react';
-import HeroCarousel from './HeroCarousel';
 import HomepageFeatures from './HomepageFeatures';
 import HomepageHeader from './HomepageHeader';
 import CallToAction from './CallToAction';
+import AboutSection from './AboutSection';
+import styles from './index.module.css';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -14,7 +15,8 @@ export default function Home(): JSX.Element {
       description="Organize knowledge. Preserve lore.">
       <HomepageHeader/>
       <main>
-        <HeroCarousel/>
+        <AboutSection/>
+        <div className={styles.sectionDivider} role="presentation" aria-hidden="true"></div>
         <HomepageFeatures/>
         <CallToAction/>
       </main>

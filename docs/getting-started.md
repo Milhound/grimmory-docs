@@ -149,4 +149,4 @@ Any device or app that supports OPDS. Kobo devices have a dedicated integration 
 ## 🔗 Get Help
 
 - [GitHub Issues](https://github.com/grimmory-tools/grimmory) for bug reports
-- [Community Discord](https://discord.gg/9YJ7HB4n8T) for questions and support
+- [Community Discord](https://discord.gg/vNsB8CTebs) for questions and support

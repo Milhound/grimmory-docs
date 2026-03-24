@@ -13,7 +13,7 @@ const config: Config = {
   },
   
   // Set the production url of your site here
-  url: 'https://docs.grimmory.org',
+  url: 'https://grimmory.org',
   baseUrl: '/',
   
   trailingSlash: false,

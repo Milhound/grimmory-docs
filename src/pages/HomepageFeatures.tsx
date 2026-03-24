@@ -21,7 +21,7 @@ const features: FeatureItem[] = [
   {
     icon: '🧠',
     title: 'Automatic Metadata',
-    description: 'Fetch book details, covers, and reviews from top sources automatically. Rich metadata with zero effort.',
+    description: 'Fetch book details, covers, and reviews from top sources automatically. Rich metadata with minimal effort.',
   },
   {
     icon: '🌐',
@@ -36,7 +36,7 @@ const features: FeatureItem[] = [
   {
     icon: '👥',
     title: 'Multi-User Ready',
-    description: 'Share your library and manage access with granular permissions. Perfect for families and teams.',
+    description: 'Share your library and manage access with granular permissions. Useful for families and teams.',
   },
   {
     icon: '🔄',
@@ -46,7 +46,7 @@ const features: FeatureItem[] = [
   {
     icon: '✉️',
     title: 'Email Sharing',
-    description: 'Send books to your Kindle or any email with just one click. Share effortlessly.',
+    description: 'Send books to your Kindle or any email with just one click.',
   },
 ];
 
@@ -111,7 +111,7 @@ function HomepageFeatures() {
   }, []);
 
   return (
-    <section className={styles.features}>
+    <section className={styles.features} id="features">
       <div className="container">
         <div
           ref={headerRef}
