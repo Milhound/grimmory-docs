@@ -75,4 +75,4 @@ Create separate libraries for different collections (e.g., Novels, Comics, Techn
 
 - Set up [metadata providers](../metadata/metadata-fetch-configuration.md) for richer book information
 - Learn about [library management](edit-library.md) for rescanning, metadata refresh, and deletion
-- Read about [folder structure](folder-structure.md) for optimal file organization
+- Read about [organization modes](organization-modes.md) for optimal file organization

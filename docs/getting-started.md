@@ -74,7 +74,7 @@ Click **"Add a Library"** from the dashboard to open the library creation dialog
 
 Grimmory supports EPUB, PDF, MOBI, AZW3, FB2, CBZ/CBR/CB7, M4B, M4A, and MP3.
 
-After saving, the library scans your folders automatically. See [Setup First Library](library/setup-first-library.md) for a full walkthrough, and [Folder Structure](library/folder-structure.md) for how to organize your files.
+After saving, the library scans your folders automatically. See [Setup First Library](library/setup-first-library.md) for a full walkthrough, and [Organization Modes](library/organization-modes.md) for how to organize your files.
 
 ---
 
