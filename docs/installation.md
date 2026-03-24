@@ -122,7 +122,7 @@ services:
 - **User IDs:** Set `APP_USER_ID`/`APP_GROUP_ID` to your user ID (`id -u` / `id -g`). `DB_USER_ID`/`DB_GROUP_ID` is typically `1000`.
 - **Passwords:** `DB_PASSWORD` must match in both `DATABASE_PASSWORD` and `MYSQL_PASSWORD`.
 - **Timezone:** Set `TZ` to your timezone (e.g., `America/New_York`). List with `timedatectl list-timezones`.
-- **Image registry:** Alternatively use `ghcr.io/booklore-app/booklore:latest` from GitHub Container Registry.
+- **Image registry:** Alternatively use `ghcr.io/grimmory-tools/grimmory:latest` from GitHub Container Registry.
 
 :::tip[Version Pinning]
 For production, pin to specific versions (e.g., `grimmory/grimmory:v1.2.3`). Check [releases](https://github.com/grimmory-tools/grimmory/releases).

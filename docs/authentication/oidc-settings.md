@@ -256,7 +256,7 @@ Click **Add Mapping** to define a new mapping. Each mapping links an OIDC group 
 
 | Field | What to enter | Example |
 |-------|---------------|---------|
-| **Group Claim** | The exact group name as it appears in the OIDC token's groups claim. Case-sensitive. | `booklore-admins` |
+| **Group Claim** | The exact group name as it appears in the OIDC token's groups claim. Case-sensitive. | `grimmory-admins` |
 | **Admin** | Check this to grant full admin access to users in this group. | ✓ |
 | **Permissions** | Select which permissions to grant. | Read, Download, Upload |
 | **Libraries** | Select which libraries this group can access. | Main Library, Comics |
@@ -266,12 +266,12 @@ Click **Add Mapping** to define a new mapping. Each mapping links an OIDC group 
 
 Users often belong to multiple groups. Grimmory handles this by **merging** all matching group mappings together:
 
-**Example:** Sarah belongs to two groups in Authentik: `booklore-readers` and `booklore-uploaders`.
+**Example:** Sarah belongs to two groups in Authentik: `grimmory-readers` and `grimmory-uploaders`.
 
 | Group | Permissions | Libraries |
 |-------|-------------|-----------|
-| `booklore-readers` | Read, Download | Fiction, Non-Fiction |
-| `booklore-uploaders` | Read, Upload | Fiction, Staging |
+| `grimmory-readers` | Read, Download | Fiction, Non-Fiction |
+| `grimmory-uploaders` | Read, Upload | Fiction, Staging |
 
 Sarah receives the **union** of both mappings:
 - **Permissions:** Read, Download, Upload
@@ -291,7 +291,7 @@ Groups are included automatically in the `groups` claim. No extra configuration 
 
 Groups are **not** included by default. You need to add a mapper:
 
-1. Go to your Keycloak realm > **Client Scopes** > `booklore-dedicated` (or your client's scope)
+1. Go to your Keycloak realm > **Client Scopes** > `grimmory-dedicated` (or your client's scope)
 2. Click **Add mapper** > **By configuration** > **Group Membership**
 3. Set:
    - **Name:** `groups`
@@ -309,7 +309,7 @@ Add `groups` to your client's scopes in the Authelia configuration:
 identity_providers:
   oidc:
     clients:
-      - client_id: booklore
+      - client_id: grimmory
         scopes:
           - openid
           - profile
@@ -341,7 +341,7 @@ A home server with a few family members. You just want everyone to sign in with 
 | Setting | Value |
 |---------|-------|
 | Provider Name | `Pocket ID` |
-| Client ID | `booklore` |
+| Client ID | `grimmory` |
 | Client Secret | *(empty)* |
 | Issuer URI | `https://pocket-id.home.lan` |
 | Scope | `openid profile email offline_access` |
@@ -349,7 +349,7 @@ A home server with a few family members. You just want everyone to sign in with 
 **Docker Compose snippet:**
 ```yaml
 services:
-  booklore:
+  grimmory:
     image: grimmory/grimmory:latest
     ports:
       - "8080:8080"
@@ -378,16 +378,16 @@ A homelab with 10-20 users, several libraries (Fiction, Non-Fiction, Comics, Aud
 
 | Group Claim | Admin | Permissions | Libraries | Description |
 |-------------|-------|-------------|-----------|-------------|
-| `booklore-admins` | Yes | Read | *(all)* | Server admins |
-| `booklore-power-users` | No | Read, Download, Upload, Edit Metadata, KOReader Sync, Kobo Sync, OPDS | Fiction, Non-Fiction, Comics, Audiobooks | Trusted users with full access |
-| `booklore-readers` | No | Read, Download, OPDS | Fiction, Non-Fiction | Regular readers |
-| `booklore-kids` | No | Read | Kids Library | Children's accounts |
+| `grimmory-admins` | Yes | Read | *(all)* | Server admins |
+| `grimmory-power-users` | No | Read, Download, Upload, Edit Metadata, KOReader Sync, Kobo Sync, OPDS | Fiction, Non-Fiction, Comics, Audiobooks | Trusted users with full access |
+| `grimmory-readers` | No | Read, Download, OPDS | Fiction, Non-Fiction | Regular readers |
+| `grimmory-kids` | No | Read | Kids Library | Children's accounts |
 
 **How it works in practice:**
 1. You create these groups in Authentik and assign users to them
 2. When a new user (let's say "Alex") logs into Grimmory for the first time via Authentik, Grimmory auto-creates their account
-3. Alex is in the `booklore-readers` group, so they get Read + Download + OPDS access to Fiction and Non-Fiction
-4. Later, you move Alex to `booklore-power-users` in Authentik
+3. Alex is in the `grimmory-readers` group, so they get Read + Download + OPDS access to Fiction and Non-Fiction
+4. Later, you move Alex to `grimmory-power-users` in Authentik
 5. Next time Alex logs in, Grimmory automatically upgrades their permissions and grants access to Comics and Audiobooks
 6. No manual Grimmory admin work needed
 
@@ -409,7 +409,7 @@ A shared server where you want tight control over who gets access. All authentic
 | Setting | Value |
 |---------|-------|
 | Provider Name | `Keycloak` |
-| Client ID | `booklore-prod` |
+| Client ID | `grimmory-prod` |
 | Client Secret | `a1b2c3d4-e5f6-7890-abcd-ef1234567890` |
 | Issuer URI | `https://keycloak.example.com/realms/myrealm` |
 | Scope | `openid profile email offline_access` |
@@ -419,14 +419,14 @@ A shared server where you want tight control over who gets access. All authentic
 
 | Group Claim | Admin | Permissions | Libraries | Description |
 |-------------|-------|-------------|-----------|-------------|
-| `booklore-admins` | Yes | Read | All | Server admins |
-| `booklore-users` | No | Read, Download | Main Library, Shared | Standard user access |
-| `booklore-curators` | No | Read, Download, Upload, Edit Metadata, Email Book | Main Library, Shared, Staging | Curators who manage the collection |
+| `grimmory-admins` | Yes | Read | All | Server admins |
+| `grimmory-users` | No | Read, Download | Main Library, Shared | Standard user access |
+| `grimmory-curators` | No | Read, Download, Upload, Edit Metadata, Email Book | Main Library, Shared, Staging | Curators who manage the collection |
 
 **Docker Compose snippet:**
 ```yaml
 services:
-  booklore:
+  grimmory:
     image: grimmory/grimmory:latest
     ports:
       - "8080:8080"
@@ -482,7 +482,7 @@ The entire token exchange happens on the server. The browser never sees the OIDC
 - The **Issuer URI** must be reachable from the Grimmory server (not from your browser). If running in Docker, use the container network name or ensure the container can reach the external URL.
 - Try curling the discovery endpoint from the Grimmory server:
   ```bash
-  curl https://auth.example.com/application/o/booklore/.well-known/openid-configuration
+  curl https://auth.example.com/application/o/grimmory/.well-known/openid-configuration
   ```
 - Check for trailing slash issues. Some providers require a trailing slash, others don't.
 

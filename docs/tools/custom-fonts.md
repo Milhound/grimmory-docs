@@ -32,7 +32,7 @@ Upload custom fonts to personalize your reading experience in Grimmory's EPUB re
 
 - **Max file size:** 5 MB per font
 - **Max fonts per user:** 10
-- **Storage location:** `~/booklore/data/custom-fonts/`
+- **Storage location:** `~/grimmory/data/custom-fonts/`
 
 :::warning[Quota]
 If you already have 10 fonts, delete one before uploading.

@@ -338,7 +338,7 @@ Example: `http://192.168.1.100:8080/komga`
 :::info[Remote Access]
 Ensure your Grimmory server is accessible from the internet. Use HTTPS for secure connections when accessing remotely.
 
-Example: `https://booklore.yourdomain.com/komga`
+Example: `https://your-grimmory-domain.com/komga`
 :::
 
 ### Firewall Settings

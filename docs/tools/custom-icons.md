@@ -67,7 +67,7 @@ Switch to the **Add SVG Icon** tab to upload a new icon by pasting its SVG code.
 - Include a `viewBox` attribute (e.g., `viewBox="0 0 24 24"`) for proper scaling. Remove hardcoded `width`/`height` if the icon doesn't scale correctly.
 - Use `fill="none"` and `stroke="white"` for the best visual consistency with Grimmory's dark theme. Hardcoded colors may not look right.
 - Maximum file size is 1MB.
-- Icons are saved to `~/booklore/data/icons/svg/` on disk.
+- Icons are saved to `~/grimmory/data/icons/svg/` on disk.
 :::
 
 ---
