@@ -83,7 +83,12 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(
+        135deg,
+        var(--primary-400) 0%,
+        var(--secondary-900) 50%,
+        var(--secondary-950) 100%
+    );
     color: white;
 }
 
@@ -96,41 +101,8 @@
     overflow: hidden;
 }
 
-.floatingOrb1 {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
-    top: -80px;
-    right: -80px;
-    animation: float 8s ease-in-out infinite;
-    filter: blur(40px);
-}
-
-.floatingOrb2 {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(118, 75, 162, 0.3) 0%, transparent 70%);
-    bottom: -40px;
-    left: -40px;
-    animation: floatReverse 10s ease-in-out infinite;
-    filter: blur(40px);
-}
-
-.floatingOrb3 {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(99, 179, 237, 0.2) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 6s ease-in-out infinite;
-    filter: blur(50px);
+.floatingOrb1, .floatingOrb2, .floatingOrb3 {
+    display: none;
 }
 
 .gridPattern {
@@ -206,7 +178,7 @@
 }
 
 .gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 50%, var(--primary-400) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -239,7 +211,7 @@
 }
 
 .primaryButton {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%) !important;
     color: white !important;
     border: none !important;
     font-weight: 600 !important;
@@ -250,12 +222,12 @@
     gap: 0.4rem !important;
     font-size: 0.9rem !important;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35) !important;
+    box-shadow: 0 4px 15px rgba(102, 102, 102, 0.35) !important;
 }
 
 .primaryButton:hover {
     transform: translateY(-3px) !important;
-    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5) !important;
+    box-shadow: 0 8px 30px rgba(102, 102, 102, 0.5) !important;
     color: white !important;
 }
 
@@ -555,7 +527,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    background: linear-gradient(90deg, var(--primary-300) 0%, var(--primary-400) 50%, var(--primary-900) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -627,7 +599,12 @@
 
 .cta {
     padding: 3.5rem 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(
+        315deg,
+        var(--primary-400) 0%,
+        var(--secondary-900) 50%,
+        var(--secondary-950) 100%
+    );
     color: white;
     text-align: center;
     position: relative;
@@ -748,7 +725,7 @@
 .modalIcon {
     width: 52px;
     height: 52px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600) 100%);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -838,7 +815,7 @@
 .modalNote svg {
     flex-shrink: 0;
     margin-top: 0.1rem;
-    color: #667eea;
+    color: var(--primary-400);
 }
 
 .launchButton {
@@ -848,7 +825,7 @@
     gap: 0.5rem;
     width: 100%;
     padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-600)  100%);
     color: white;
     font-size: 1.05rem;
     font-weight: 600;
