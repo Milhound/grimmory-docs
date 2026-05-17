@@ -174,9 +174,7 @@ How it works:
 2. The Kobo sends that rating to Grimmory when you tap **Sync now** after setting the rating.
 3. Grimmory finds the matching book in your library and stores the value as your personal rating.
 
-- Kobo uses a 1-5 star scale.
-- Grimmory stores personal ratings on a 0-10 scale.
-- Kobo ratings are converted by doubling the value (for example, 4 stars on Kobo becomes 8 in Grimmory).
+**Note:** Kobo ratings are converted by doubling the value (for example, 4 stars on Kobo becomes 8 in Grimmory).
 
 ---
 
