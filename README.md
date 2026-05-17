@@ -1,8 +1,11 @@
-<p align="center">
-  <a href="https://grimmory.org/docs/getting-started"><img src="https://img.shields.io/badge/Read%20the%20Docs-FB923C?style=for-the-badge&logo=readthedocs&link=https%3A%2F%2Fgrimmory.org%2Fdocs%2Fgetting-started" alt="Read the Docs"/></a>
-  <a href="https://discord.gg/vNsB8CTebs"><img src="https://img.shields.io/discord/1483208318720675860?style=for-the-badge&logo=discord&label=Join%20Discord&link=https%3A%2F%2Fdiscord.gg%2FvNsB8CTebs" alt="Join Discord"/></a>
-  <a href="https://github.com/grimmory-tools/grimmory/releases/latest"><img src="https://img.shields.io/docker/v/grimmory/grimmory/latest?style=for-the-badge&label=Latest%20Version" alt="Latest Version"/></a>
-</p>
+<div align="center">
+
+[![Read the Docs](https://img.shields.io/badge/Read%20the%20Docs-FB923C?style=flat-square&logo=readthedocs)](https://grimmory.org/docs/getting-started)
+[![Join Discord](https://img.shields.io/badge/Discord-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/vNsB8CTebs)
+[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500?style=flat-square&logo=reddit&logoColor=white)](https://www.reddit.com/r/Grimmory/)
+[![Latest Docker Version](https://img.shields.io/docker/v/grimmory/grimmory/latest?color=2496ED&style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/grimmory/grimmory/tags)
+
+</div>
 
 # Grimmory Docs
 
