@@ -1,6 +1,6 @@
 # Kobo Integration
 
-Kobo sync lets you send books from Grimmory to your Kobo eReader and sync reading activity between both systems. Reading progress sync can be bidirectional, and personal ratings set on Kobo sync back to Grimmory. You control what gets synced through a dedicated Kobo shelf: add a book to the shelf and it appears on your device, remove it and it disappears on the next sync. Your shelves and magic shelves carry over as Kobo collections, so the organization you've built in Grimmory follows you to the device.
+Kobo sync lets you send books from Grimmory to your Kobo eReader and sync reading activity between both systems. Reading progress sync is bidirectional, and personal ratings set on Kobo sync back to Grimmory. You control what gets synced through a dedicated Kobo shelf: add a book to the shelf and it appears on your device, remove it and it disappears on the next sync. Your shelves and magic shelves carry over as Kobo collections, so the organization you've built in Grimmory follows you to the device.
 
 :::info[Kobo Account Required]
 Your device must be signed in to a Kobo account for this integration to function. 
@@ -177,8 +177,6 @@ How it works:
 - Kobo uses a 1-5 star scale.
 - Grimmory stores personal ratings on a 0-10 scale.
 - Kobo ratings are converted by doubling the value (for example, 4 stars on Kobo becomes 8 in Grimmory).
-
-This sync is currently one-way for ratings: Kobo ratings are pushed into Grimmory, but existing Grimmory personal ratings are not sent to Kobo.
 
 ---
 

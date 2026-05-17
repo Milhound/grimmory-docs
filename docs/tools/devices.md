@@ -60,8 +60,7 @@ When KOReader progress is synced to Grimmory, Grimmory automatically forwards th
 
 ## 📲 Kobo Integration
 
-Sync your Grimmory library and reading activity with your Kobo e-reader. Books on your Kobo shelf are delivered to the device, reading progress can be synced bidirectionally, and Kobo personal ratings can be synced back to Grimmory.
-
+Sync your Grimmory library and reading activity with your Kobo e-reader. Books on your Kobo shelf are delivered to your device, your reading progress syncs both ways, and your Kobo ratings update in Grimmory.
 Requires the **Kobo Sync** permission.
 
 ![Kobo Integration Configuration](/img/devices/kobo-integration.jpg)
